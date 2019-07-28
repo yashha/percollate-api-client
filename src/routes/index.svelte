@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Percollate API Client</title>
+	<title>Percollate API</title>
 </svelte:head>
 
 <style type="text/scss">
@@ -25,10 +25,10 @@
 
   <div class="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal" style="font-family:Georgia,serif;">
     <div class="font-sans">
-      <h1 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-4xl">Percollate API Client</h1>
+      <h1 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-4xl">Percollate API</h1>
     </div>
     <p class="py-6">
-      👋 Welcome fellow <a class="text-teal-500 no-underline hover:underline" href="https://www.tailwindcss.com">Percollate Api</a> a Public API to transform website content to pdf using the percollate package.
+      👋 Welcome fellow <a class="text-teal-500 no-underline hover:underline" href="https://github.com/yashha/percollate-api">Percollate API</a> a Public API to transform website content to pdf using the percollate package.
     </p>
 
     <form class="w-full">
