@@ -28,7 +28,7 @@
       <h1 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-4xl">Percollate API</h1>
     </div>
     <p class="py-6">
-      👋 Welcome fellow <a class="text-teal-500 no-underline hover:underline" href="https://github.com/yashha/percollate-api">Percollate API</a> a Public API to transform website content to pdf using the percollate package.
+      👋 Welcome to <a class="text-teal-500 no-underline hover:underline" href="https://github.com/yashha/percollate-api">Percollate API</a> a Public API to transform website content to pdf using the percollate package.
     </p>
 
     <form class="w-full">
