@@ -1,13 +1,8 @@
 {
-  "name": "sapper-boilerplate-app",
+  "name": "percollate-api-client",
   "version": "1.0.0",
-  "description": "This is a simple Sapper(by Svelte) boilerplate using [svelte-preprocess-sass](https://github.com/kazzkiq/svelte-preprocess-scss) with no erros, thanks to this `svelte.config.js` fix that I found [here](https://github.com/UnwrittenFun/svelte-vscode/issues/1).",
-  "author": "Clovis Rosa",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/clovis-rosa/sapper-boilerplate-app.git"
-  },
+  "description": "Web client for percollate api",
+  "license": "MIT",
   "scripts": {
     "dev": "sapper dev",
     "build": "sapper build",
