@@ -2,9 +2,11 @@
   "version": 2,
   "name": "percollate-api-client",
   "alias": "percollate-api-client.now.sh",
-  "files": [
-    "static",
-    "__sapper__/build",
-    "yarn.lock"
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "__sapper__/export" }
+    }
   ]
 }
