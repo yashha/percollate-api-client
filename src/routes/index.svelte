@@ -55,7 +55,7 @@
       <label>
         <input
           class="bg-white focus:outline-0 focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
-          type="email" placeholder="Enter url"
+          name="url" placeholder="Enter url"
           bind:value={url}>
       </label>
 
