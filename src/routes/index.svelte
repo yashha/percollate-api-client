@@ -7,6 +7,16 @@
     width: 100%;
     height: 400px;
   }
+  .paclient {
+    &__iframe {
+      position: absolute;
+      height: 0;
+      &.loaded {
+        position: relative;
+        height: auto;
+      }
+    }
+  }
 </style>
 
 <script>
@@ -14,11 +24,22 @@
   let orientation = "";
   let format = "";
   let customCss = "";
+  $: isLoaded = false;
+
+  $: {
+    url = url + "";
+    isLoaded = false;
+  }
 
   $: computed_url = "https://percollate-api.herokuapp.com/pdf?url=" + url
     + "&" + "css="
     + encodeURIComponent(`@page { size: ${format} ${orientation} }`)
     + encodeURIComponent(customCss);
+
+  async function iframeLoaded() {
+    isLoaded = true;
+    console.log('test');
+  }
 </script>
 
 <div class="container w-full md:max-w-3xl mx-auto pt-20">
@@ -85,7 +106,10 @@
 
     <div class="block w-full">
       {#if url}
-        <iframe src="{computed_url}" title="test"></iframe>
+        <iframe class="paclient__iframe {isLoaded && url ? 'loaded': ''}" src="{computed_url}" title="test" on:load="{iframeLoaded}"></iframe>
+      {/if}
+      {#if !isLoaded && url}
+        Loading ...
       {/if}
     </div>
 
