@@ -39,6 +39,9 @@
     isLoaded = true;
     console.log('test');
   }
+  function onSubmit(e) {
+    e.preventDefault();
+  }
 </script>
 
 <div class="container w-full md:max-w-3xl mx-auto pt-20">
@@ -51,7 +54,7 @@
       👋 Welcome to <a class="text-teal-500 no-underline hover:underline" href="https://github.com/yashha/percollate-api">Percollate API</a> a Public API to transform website content to pdf using the percollate package.
     </p>
 
-    <form class="w-full">
+    <form class="w-full" on:submit="{onSubmit}">
       <label>
         <input
           class="bg-white focus:outline-0 focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
