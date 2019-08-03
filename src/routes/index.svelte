@@ -109,12 +109,15 @@
           </div>
         </div>
         <div class="w-full md:w-1/3 px-3 mt-6 mb-6 md:mb-0">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-            CUSTOM CSS
-          </label>
-          <div class="relative">
-            <textarea bind:value={customCss} class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"></textarea>
-          </div>
+          <details>
+            <summary>Custom CSS</summary>
+            <label class="block uppercase tracking-wide text-gray-700  mt-3 text-xs font-bold mb-2" for="grid-state">
+              CUSTOM CSS
+            </label>
+            <div class="relative">
+              <textarea bind:value={customCss} class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"></textarea>
+            </div>
+          </details>
         </div>
       </div>
     </form>
