@@ -3,17 +3,14 @@
 </svelte:head>
 
 <style type="text/scss">
-  iframe {
-    width: 100%;
-    height: 400px;
-  }
   .paclient {
     &__iframe {
       position: absolute;
       height: 0;
       &.loaded {
         position: relative;
-        height: auto;
+        width: 100%;
+        height: 600px;
       }
     }
   }
