@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "sapper dev",
-    "build": "sapper build",
-    "export": "sapper export",
+    "build:ssr": "sapper build",
+    "build": "sapper export",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
