@@ -58,7 +58,7 @@
       <label>
         <input
           class="bg-white focus:outline-0 focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
-          name="url" placeholder="Enter url"
+          type="search" name="url" placeholder="Enter url"
           bind:value={url}>
       </label>
 
@@ -122,6 +122,14 @@
       </div>
     </form>
 
+    {#if url}
+      <div  class="flex justify-center">
+        <a class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" href="{computed_url}" download>
+          <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+          <span>Download</span>
+        </a>
+      </div>
+    {/if}
     <br>
 
     <div class="block w-full">
