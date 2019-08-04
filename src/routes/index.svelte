@@ -13,6 +13,11 @@
         height: 600px;
       }
     }
+    &__search {
+      &::-webkit-search-cancel-button {
+        display: none;
+      }
+    }
   }
 </style>
 
@@ -42,6 +47,10 @@
   function onSubmit(e) {
     e.preventDefault();
   }
+  function clearInput() {
+    const searchField = document.getElementsByClassName('paclient__search')[0];
+    searchField.value = '';
+  }
 </script>
 
 <div class="container w-full md:max-w-3xl mx-auto pt-20">
@@ -55,11 +64,16 @@
     </p>
 
     <form class="w-full" on:submit="{onSubmit}">
-      <label>
+      <label class="relative block">
         <input
-          class="bg-white focus:outline-0 focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+          class="paclient__search bg-gray-200 focus:outline-0 focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal pr-10"
           type="search" name="url" placeholder="Enter url"
           bind:value={url}>
+        {#if url}
+          <div class="absolute right-0 top-0 mt-3 mr-3" on:click="{clearInput}">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1" style="--darkreader-inline-fill:none; --darkreader-inline-stroke:currentColor;" data-darkreader-inline-fill="" data-darkreader-inline-stroke=""><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+          </div>
+        {/if}
       </label>
 
       <br>
