@@ -29,7 +29,7 @@
     isLoaded = false;
   }
 
-  $: computed_url = "https://percollate-api.herokuapp.com/pdf?url=" + url
+  $: computed_url = "https://percollate-api.herokuapp.com/load.pdf?url=" + url
     + `&pagesperside=${pagesPerSide}`
     + "&" + "css="
     + encodeURIComponent(`@page { size: ${format} ${orientation} }`)
