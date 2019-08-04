@@ -129,7 +129,7 @@
         <iframe class="paclient__iframe {isLoaded && url ? 'loaded': ''}" src="{computed_url}" title="test" on:load="{iframeLoaded}"></iframe>
       {/if}
       {#if !isLoaded && url}
-        Loading ...
+        Loading ... this could take up to 30s
       {/if}
     </div>
 
