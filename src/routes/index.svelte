@@ -42,7 +42,6 @@
 
   async function iframeLoaded() {
     isLoaded = true;
-    console.log('test');
   }
   function onSubmit(e) {
     e.preventDefault();
