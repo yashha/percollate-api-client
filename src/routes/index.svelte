@@ -47,8 +47,7 @@
     e.preventDefault();
   }
   function clearInput() {
-    const searchField = document.getElementsByClassName('paclient__search')[0];
-    searchField.value = '';
+    url = "";
   }
 </script>
 
