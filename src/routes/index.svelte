@@ -137,7 +137,7 @@
 
     <hr class="border-b-2 border-gray-400 mb-4 mx-4">
     <div class="flex w-full items-center font-sans px-4 py-12">
-      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.9.0/svgs/brands/github.svg" alt="Github">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://unpkg.com/@fortawesome/fontawesome-free@5.10.1/svgs/brands/github.svg" alt="Github">
       <div class="flex-1 px-2">
         <p class="text-base font-bold text-base md:text-xl leading-none mb-2">percollate-api</p>
         <p class="text-gray-600 text-xs md:text-base">Public API by <a
@@ -154,7 +154,7 @@
 
     <hr class="border-b-2 border-gray-400 mb-4 mx-4">
     <div class="flex w-full items-center font-sans px-4 py-12">
-      <img class="w-10 h-10 rounded-full mr-4" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.9.0/svgs/brands/github.svg" alt="Github">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://unpkg.com/@fortawesome/fontawesome-free@5.10.1/svgs/brands/github.svg" alt="Github">
       <div class="flex-1 px-2">
         <p class="text-base font-bold text-base md:text-xl leading-none mb-2">percollate</p>
         <p class="text-gray-600 text-xs md:text-base">A command-line tool to turn web pages into beautifully formatted PDFs  by <a
