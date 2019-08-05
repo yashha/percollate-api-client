@@ -32,21 +32,17 @@
 </script>
 
 <style type="text/scss">
-  .paclient {
-    &__iframe {
-      position: absolute;
-      height: 0;
-      &.loaded {
-        position: relative;
-        width: 100%;
-        height: 600px;
-      }
-    }
-    &__search {
-      &::-webkit-search-cancel-button {
-        display: none;
-      }
-    }
+  .paclient__iframe {
+    position: absolute;
+    height: 0;
+  }
+  .paclient__iframe.loaded {
+    position: relative;
+    width: 100%;
+    height: 600px;
+  }
+  .paclient__search::-webkit-search-cancel-button {
+    display: none;
   }
 </style>
 
