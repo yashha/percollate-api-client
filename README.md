@@ -4,5 +4,4 @@ This is a simple Sapper(by Svelte) boilerplate using [svelte-preprocess-sass](ht
 
 Seems to be working fine! :ok_hand: :thumbsup: :grin:
 
-
 Cheers!
