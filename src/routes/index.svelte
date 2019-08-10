@@ -78,7 +78,7 @@
           class="paclient__search bg-gray-200 focus:outline-0
           focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block
           w-full appearance-none leading-normal pr-10"
-          type="search"
+          type="url"
           name="url"
           placeholder="Enter url"
           bind:value={url} />
