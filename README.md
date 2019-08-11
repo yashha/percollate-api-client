@@ -1,7 +1,12 @@
-# sapper-boilerplate-app
+# Welcome to the percollate api client 👋
 
-This is a simple Sapper(by Svelte) boilerplate using [svelte-preprocess-sass](https://github.com/kazzkiq/svelte-preprocess-scss) with no erros, thanks to this `svelte.config.js` fix that I found [here](https://github.com/UnwrittenFun/svelte-vscode/issues/1).
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <a href="https://github.com/yashha/percollate-api-client">
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" target="_blank" />
+  </a>
+</p>
 
-Seems to be working fine! :ok_hand: :thumbsup: :grin:
+> Web client for percollate api
 
-Cheers!
+### 🏠 [Homepage](https://percollate-api-client.now.sh/)
