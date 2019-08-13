@@ -71,6 +71,9 @@
 
 <svelte:head>
   <title>Percollate API</title>
+  <description>
+    Make the web readable and printable by generating clean pdf.
+  </description>
 </svelte:head>
 <div class="container w-full md:max-w-3xl mx-auto pt-20">
 
