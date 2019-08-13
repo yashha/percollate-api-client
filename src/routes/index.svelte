@@ -99,13 +99,14 @@
     </p>
 
     <form class="w-full" on:submit={onSubmit}>
-      <label class="relative block">
+      <label class="relative block" for="url">
         <input
           class="paclient__search bg-gray-200 focus:outline-0
           focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block
           w-full appearance-none leading-normal pr-10"
           type="url"
           name="url"
+          id="url"
           placeholder="Enter url"
           required
           bind:value={url} />
@@ -135,7 +136,7 @@
           <label
             class="block uppercase tracking-wide text-gray-700 text-xs font-bold
             mb-2"
-            for="grid-state">
+            for="format">
             FORMAT
           </label>
           <div class="relative">
@@ -144,7 +145,7 @@
               class="block appearance-none w-full bg-gray-200 border
               border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight
               focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-state">
+              id="format">
               <option value="a4">A4</option>
               <option value="a5" selected>A5</option>
             </select>
@@ -169,7 +170,7 @@
           <label
             class="block uppercase tracking-wide text-gray-700 text-xs font-bold
             mb-2"
-            for="grid-state">
+            for="orientation">
             ORIENTATION
           </label>
           <div class="relative">
@@ -178,7 +179,7 @@
               class="block appearance-none w-full bg-gray-200 border
               border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight
               focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-state">
+              id="orientation">
               <option value="portrait" selected>portrait</option>
               <option value="landscape">landscape</option>
             </select>
@@ -203,7 +204,7 @@
           <label
             class="block uppercase tracking-wide text-gray-700 text-xs font-bold
             mb-2"
-            for="grid-state">
+            for="pagesperside">
             PAGES PER SIDE
           </label>
           <div class="relative">
@@ -212,7 +213,7 @@
               class="block appearance-none w-full bg-gray-200 border
               border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight
               focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-state">
+              id="pagesperside">
               <option value="1" selected>1</option>
               <option value="2">2</option>
               <option value="4">4</option>
@@ -238,7 +239,7 @@
           <label
             class="block uppercase tracking-wide text-gray-700 text-xs font-bold
             mb-2"
-            for="grid-state">
+            for="fontsize">
             FONT SIZE
           </label>
           <div class="relative">
@@ -247,6 +248,7 @@
               min="8"
               max="16"
               bind:value={fontSize}
+              id="fontsize"
               class="block appearance-none w-full bg-gray-200 border
               border-gray-200 text-gray-700 py-3 px-4 pl-4 pr-4 rounded
               leading-tight focus:outline-none focus:bg-white
@@ -293,7 +295,7 @@
             <label
               class="block uppercase tracking-wide text-gray-700 mt-3 text-xs
               font-bold mb-2"
-              for="grid-state">
+              for="customcss">
               CUSTOM CSS
             </label>
             <div class="relative">
@@ -303,7 +305,7 @@
                 border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded
                 leading-tight focus:outline-none focus:bg-white
                 focus:border-gray-500"
-                id="grid-state" />
+                id="customcss" />
             </div>
           </details>
         </div>
