@@ -1,0 +1,8 @@
+{
+  "name": "Percollate Web API",
+  "short_name": "percollateweb",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color" : "#fff" ,
+  "description": "A client for percollate web api."
+}
