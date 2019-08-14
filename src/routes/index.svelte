@@ -22,7 +22,7 @@
       }
       computed_url =
         'https://percollate-api.herokuapp.com/load.pdf?url=' +
-        url +
+        encodeURIComponent(url) +
         `&pagesperside=${pagesPerSide}` +
         '&' +
         'css=' +
