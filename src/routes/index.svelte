@@ -1,6 +1,5 @@
 <script>
   let url = '';
-  let orientation = '';
   let format = '';
   let customCss = '';
   let pagesPerSide = '';
