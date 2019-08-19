@@ -1,6 +1,6 @@
 <script>
   let url = '';
-  let format = '';
+  let format = 'a5';
   let customCss = '';
   let pagesPerSide = '';
   let fontSize = 12;
