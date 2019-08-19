@@ -2,7 +2,7 @@
   let url = '';
   let format = 'a5';
   let customCss = '';
-  let pagesPerSide = '';
+  let pagesPerSide = '1';
   let fontSize = 12;
 
   $: isLoaded = false;
