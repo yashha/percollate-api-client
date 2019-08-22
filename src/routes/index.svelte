@@ -1,4 +1,6 @@
 <script>
+  import { onMount } from 'svelte';
+
   let url = '';
   let format = 'a5';
   let customCss = '';
@@ -42,6 +44,10 @@
   function clearInput() {
     url = '';
   }
+
+  onMount(async () => {
+    await fetch('https://percollate-api.herokuapp.com/');
+  });
 </script>
 
 <style type="text/scss">
