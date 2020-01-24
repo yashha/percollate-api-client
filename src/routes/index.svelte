@@ -75,10 +75,10 @@
 </style>
 
 <svelte:head>
-  <title>Percollate API</title>
+  <title>Read the web!</title>
   <meta
     name="description"
-    content="Make the web readable and printable by generating clean pdf." />
+    content="Make the web more readable and printable by generating clean pdf." />
 </svelte:head>
 <div class="container w-full md:max-w-3xl mx-auto pt-20">
 
@@ -89,18 +89,12 @@
       <h1
         class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-3xl
         md:text-4xl">
-        Percollate API
+        Read the web!
       </h1>
     </div>
     <p class="py-6">
-      👋 Welcome to the
-      <a
-        class="text-teal-500 no-underline hover:underline"
-        href="https://github.com/yashha/percollate-api">
-        Percollate API
-      </a>
-      a public API to transform website content to PDF using the percollate
-      package.
+      👋 Welcome to the Read the Web! Make the web more readable and printable
+      by generating clean pdf.
     </p>
 
     <form class="w-full" on:submit={onSubmit}>
@@ -324,71 +318,5 @@
       {/if}
       {#if !isLoaded && computed_url}Loading ... this could take up to 30s{/if}
     </div>
-
-    <br />
-
-    <hr class="border-b-2 border-gray-400 mb-4 mx-4" />
-    <div class="flex w-full items-center font-sans px-4 py-12">
-      <img
-        class="w-10 h-10 rounded-full mr-4"
-        src="https://unpkg.com/@fortawesome/fontawesome-free@5.10.1/svgs/brands/github.svg"
-        alt="Github" />
-      <div class="flex-1 px-2">
-        <p class="text-base font-bold text-base md:text-xl leading-none mb-2">
-          percollate-api
-        </p>
-        <p class="text-gray-600 text-xs md:text-base">
-          Public API by
-          <a
-            class="text-teal-500 no-underline hover:underline"
-            href="https://github.com/yashha">
-            yashha
-          </a>
-          to transform website content to pdf using the percollate package.
-        </p>
-      </div>
-      <div class="justify-end">
-        <a
-          href="https://github.com/yashha/percollate-api"
-          class="bg-transparent border border-gray-500 hover:border-teal-500
-          text-xs text-gray-500 hover:text-teal-500 font-bold py-2 px-4
-          rounded-full">
-          Read More
-        </a>
-      </div>
-    </div>
-
-    <hr class="border-b-2 border-gray-400 mb-4 mx-4" />
-    <div class="flex w-full items-center font-sans px-4 py-12">
-      <img
-        class="w-10 h-10 rounded-full mr-4"
-        src="https://unpkg.com/@fortawesome/fontawesome-free@5.10.1/svgs/brands/github.svg"
-        alt="Github" />
-      <div class="flex-1 px-2">
-        <p class="text-base font-bold text-base md:text-xl leading-none mb-2">
-          percollate
-        </p>
-        <p class="text-gray-600 text-xs md:text-base">
-          A command-line tool to turn web pages into beautifully formatted PDFs
-          by
-          <a
-            class="text-teal-500 no-underline hover:underline"
-            href="https://github.com/danburzo">
-            danburzo
-          </a>
-          .
-        </p>
-      </div>
-      <div class="justify-end">
-        <a
-          href="https://github.com/danburzo/percollate"
-          class="bg-transparent border border-gray-500 hover:border-teal-500
-          text-xs text-gray-500 hover:text-teal-500 font-bold py-2 px-4
-          rounded-full">
-          Read More
-        </a>
-      </div>
-    </div>
-    <hr class="border-b-2 border-gray-400 mb-8 mx-4" />
   </div>
 </div>
