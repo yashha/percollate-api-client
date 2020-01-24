@@ -22,7 +22,7 @@
         throw new Error('Wrong fontsize');
       }
       computed_url =
-        'https://percollate-api.herokuapp.com/load.pdf?url=' +
+        'https://readtheweb.herokuapp.com/load.pdf?url=' +
         encodeURIComponent(url) +
         `&pagesperside=${pagesPerSide}` +
         '&' +
@@ -46,7 +46,7 @@
   }
 
   onMount(async () => {
-    await fetch('https://percollate-api.herokuapp.com/');
+    await fetch('https://readtheweb.herokuapp.com/');
   });
 </script>
 
