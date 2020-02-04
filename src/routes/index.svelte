@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
 
-  let url = '';
+  let urls = [''];
   let format = 'a5';
   let customCss = '';
   let pagesPerSide = '1';
@@ -10,20 +10,26 @@
   $: isLoaded = false;
 
   $: {
-    url = url + '';
+    urls = [...urls];
     isLoaded = false;
   }
 
   let computed_url = '';
   $: {
     try {
-      new URL(url);
+      let urls_query = '';
+      for (const url of urls) {
+        if (url !== '') {
+          new URL(url);
+          urls_query += '&url=' + encodeURIComponent(url);
+        }
+      }
       if (fontSize < 8 || fontSize > 16) {
         throw new Error('Wrong fontsize');
       }
       computed_url =
-        'https://readtheweb.herokuapp.com/load.pdf?url=' +
-        encodeURIComponent(url) +
+        'https://readtheweb.herokuapp.com/load.pdf?' +
+        urls_query +
         `&pagesperside=${pagesPerSide}` +
         '&' +
         'css=' +
@@ -41,8 +47,11 @@
   function onSubmit(e) {
     e.preventDefault();
   }
-  function clearInput() {
-    url = '';
+  function clearInput(index) {
+    urls[index] = '';
+  }
+  function addUrlInput() {
+    urls = [...urls, ''];
   }
 
   onMount(async () => {
@@ -104,35 +113,54 @@
         for="url">
         URL
       </label>
-      <div class="relative">
-        <input
-          class="paclient__search bg-gray-200 focus:outline-0
-          focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block
-          w-full appearance-none leading-normal pr-10"
-          type="url"
-          name="url"
-          id="url"
-          placeholder="Enter url"
-          required
-          bind:value={url} />
-        {#if url}
-          <div class="absolute right-0 top-0 mt-3 mr-3" on:click={clearInput}>
-            <svg
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-              stroke="currentColor"
-              stroke-width="2"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10" />
-              <line x1="15" y1="9" x2="9" y2="15" />
-              <line x1="9" y1="9" x2="15" y2="15" />
-            </svg>
-          </div>
-        {/if}
-      </div>
+      {#each urls as url, index}
+        <div class="relative">
+          <input
+            class="paclient__search bg-gray-200 focus:outline-0 mt-5
+            focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4
+            block w-full appearance-none leading-normal pr-10"
+            type="url"
+            name="url"
+            id="url"
+            placeholder="Enter url"
+            required
+            bind:value={url} />
+          {#if url}
+            <div
+              class="absolute right-0 top-0 mt-3 mr-3"
+              on:click={() => clearInput(index)}>
+              <svg
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="15" y1="9" x2="9" y2="15" />
+                <line x1="9" y1="9" x2="15" y2="15" />
+              </svg>
+            </div>
+          {/if}
+        </div>
+      {/each}
+
+      <button
+        on:click={addUrlInput}
+        title="Append additional page"
+        class="bg-gray-300 hover:bg-gray-400 mt-4 float-right h-10 w-10
+        text-gray-800 font-bold py-2 px-3 rounded inline-flex items-center">
+        <svg
+          class="h-24 w-24"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 8 8">
+          <path d="M3 0v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2z" />
+        </svg>
+      </button>
+
+      <br />
 
       <br />
 
@@ -311,7 +339,7 @@
     <div class="block w-full">
       {#if computed_url}
         <iframe
-          class="paclient__iframe {isLoaded && url ? 'loaded' : ''}"
+          class="paclient__iframe {isLoaded && urls[0] ? 'loaded' : ''}"
           src={computed_url}
           title="test"
           on:load={iframeLoaded} />
