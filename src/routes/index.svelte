@@ -7,8 +7,6 @@
   let pagesPerSide = '1';
   let fontSize = 12;
 
-  let computed_url = '';
-
   $: isLoaded = false;
 
   $: {
@@ -30,6 +28,7 @@
     urls = [...urls, ''];
   }
   function buildUrl() {
+    let computed_url = '';
     try {
       let urls_query = '';
       for (const url of urls) {
