@@ -108,21 +108,21 @@
     </p>
 
     <form class="w-full" on:submit={onSubmit}>
-      <label
-        class="block uppercase tracking-wide text-gray-700 text-xs font-bold
-        mb-2"
-        for="url">
-        URL
-      </label>
       {#each urls as url, index}
+        <label
+          class="mt-5 block uppercase tracking-wide text-gray-700 text-xs
+          font-bold mb-2"
+          for="url-{index}">
+          URL
+        </label>
         <div class="relative">
           <input
-            class="paclient__search bg-gray-200 focus:outline-0 mt-5
+            class="paclient__search bg-gray-200 focus:outline-0 mt-3
             focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4
             block w-full appearance-none leading-normal pr-10"
             type="url"
             name="url"
-            id="url"
+            id="url-{index}"
             placeholder="Enter url"
             required
             bind:value={url} />
