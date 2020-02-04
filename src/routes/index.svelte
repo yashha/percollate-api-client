@@ -7,15 +7,29 @@
   let pagesPerSide = '1';
   let fontSize = 12;
 
+  let computed_url = '';
+
   $: isLoaded = false;
 
   $: {
     urls = [...urls];
     isLoaded = false;
+    buildUrl();
   }
 
-  let computed_url = '';
-  $: {
+  async function iframeLoaded() {
+    isLoaded = true;
+  }
+  function onSubmit(e) {
+    e.preventDefault();
+  }
+  function clearInput(index) {
+    urls[index] = '';
+  }
+  function addUrlInput() {
+    urls = [...urls, ''];
+  }
+  function buildUrl() {
     try {
       let urls_query = '';
       for (const url of urls) {
@@ -39,19 +53,6 @@
     } catch (e) {
       computed_url = '';
     }
-  }
-
-  async function iframeLoaded() {
-    isLoaded = true;
-  }
-  function onSubmit(e) {
-    e.preventDefault();
-  }
-  function clearInput(index) {
-    urls[index] = '';
-  }
-  function addUrlInput() {
-    urls = [...urls, ''];
   }
 
   onMount(async () => {
