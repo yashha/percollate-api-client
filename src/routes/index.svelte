@@ -5,6 +5,7 @@
   import ButtonAdd from '../components/ButtonAdd.svelte';
   import ButtonDownload from '../components/ButtonDownload.svelte';
   import FormCheckbox from '../components/FormCheckbox.svelte';
+  import FormDropdown from '../components/FormDropdown.svelte';
 
   let urls = [''];
   let format = 'a5';
@@ -168,75 +169,18 @@
       {/if}
 
       <div class="flex flex-wrap -mx-3 mb-2">
-        <div class="w-full md:w-1/4 px-3 mb-6 md:mb-0">
-          <label
-            class="block uppercase tracking-wide text-gray-700 text-xs font-bold
-            mb-2"
-            for="format">
-            FORMAT
-          </label>
-          <div class="relative">
-            <select
-              bind:value={format}
-              class="block appearance-none w-full bg-gray-200 border
-              border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight
-              focus:outline-none focus:bg-white focus:border-gray-500"
-              id="format">
-              <option value="a4">A4</option>
-              <option value="a5" selected>A5</option>
-            </select>
-            <div
-              class="pointer-events-none absolute inset-y-0 right-0 flex
-              items-center px-2 text-gray-700">
-              <svg
-                class="h-4 w-4"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div class="w-full md:w-1/4 px-3 mb-6 md:mb-0">
-          <label
-            class="block uppercase tracking-wide text-gray-700 text-xs font-bold
-            mb-2"
-            for="pagesperside">
-            PAGES PER SIDE
-          </label>
-          <div class="relative">
-            <select
-              bind:value={pagesPerSide}
-              class="block appearance-none w-full bg-gray-200 border
-              border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight
-              focus:outline-none focus:bg-white focus:border-gray-500"
-              id="pagesperside">
-              <option value="1" selected>1</option>
-              <option value="2">2</option>
-              <option value="4">4</option>
-            </select>
-            <div
-              class="pointer-events-none absolute inset-y-0 right-0 flex
-              items-center px-2 text-gray-700">
-              <svg
-                class="h-4 w-4"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </div>
-          </div>
-        </div>
+        <FormDropdown label="FORMAT" name="format" bind:value={format}>
+          <option value="a4">A4</option>
+          <option value="a5" selected>A5</option>
+        </FormDropdown>
+        <FormDropdown
+          label="PAGES PER SIDE"
+          name="pagesperside"
+          bind:value={pagesPerSide}>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="4">4</option>
+        </FormDropdown>
         <div class="w-full md:w-1/4 px-3 mb-6 md:mb-0">
           <label
             class="block uppercase tracking-wide text-gray-700 text-xs font-bold
