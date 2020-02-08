@@ -3,6 +3,7 @@
 
   import IconClose from './svg/icon-close.svelte';
   import ButtonAdd from '../components/ButtonAdd.svelte';
+  import ButtonDownload from '../components/ButtonDownload.svelte';
   import FormShowToc from '../components/FormShowToc.svelte';
 
   let urls = [''];
@@ -315,27 +316,7 @@
     </form>
 
     {#if urls.length > 0 && urls[0] !== ''}
-      <div class="flex justify-center">
-        <a
-          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4
-          rounded inline-flex items-center"
-          href={computed_url}
-          download>
-          <svg
-            class="w-5 h-5 mr-2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-            <polyline points="7 10 12 15 17 10" />
-            <line x1="12" y1="15" x2="12" y2="3" />
-          </svg>
-          <span>Download</span>
-        </a>
-      </div>
+      <ButtonDownload url={computed_url} />
     {/if}
     <br />
 
