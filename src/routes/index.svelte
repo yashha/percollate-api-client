@@ -6,6 +6,7 @@
   let customCss = '';
   let pagesPerSide = '1';
   let fontSize = 12;
+  let showToc = false;
 
   let computed_url = '';
 
@@ -50,6 +51,9 @@
         encodeURIComponent(`html { font-size: ${fontSize}pt }`) +
         encodeURIComponent(`@page { size: ${format} portrait }`) +
         encodeURIComponent(customCss);
+      if (showToc) {
+        computed_url += '&toc=true';
+      }
     } catch (e) {
       computed_url = '';
     }
@@ -164,6 +168,18 @@
       <br />
 
       <br />
+
+      {#if urls.length > 1}
+        <div class="md:flex md:items-center mb-6">
+          <label class="md:w-2/3 font-bold">
+            <input
+              class="mr-2 leading-tight"
+              type="checkbox"
+              bind:value={showToc} />
+            <span class="text-sm text-gray-700">Show table of contents!</span>
+          </label>
+        </div>
+      {/if}
 
       <div class="flex flex-wrap -mx-3 mb-2">
         <div class="w-full md:w-1/4 px-3 mb-6 md:mb-0">
