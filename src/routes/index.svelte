@@ -6,6 +6,7 @@
   import ButtonDownload from '../components/ButtonDownload.svelte';
   import FormCheckbox from '../components/FormCheckbox.svelte';
   import FormDropdown from '../components/FormDropdown.svelte';
+  import FormUrl from '../components/FormUrl.svelte';
 
   let urls = [''];
   let format = 'a5';
@@ -92,9 +93,6 @@
     width: 100%;
     height: 600px;
   }
-  .paclient__search::-webkit-search-cancel-button {
-    display: none;
-  }
   .input-number-hide {
     -moz-appearance: textfield;
   }
@@ -131,31 +129,7 @@
 
     <form class="w-full" on:submit={onSubmit}>
       {#each urls as url, index}
-        <label
-          class="mt-5 block uppercase tracking-wide text-gray-700 text-xs
-          font-bold mb-2"
-          for="url-{index}">
-          URL
-        </label>
-        <div class="relative">
-          <input
-            class="paclient__search bg-gray-200 focus:outline-0 mt-3
-            focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4
-            block w-full appearance-none leading-normal pr-10"
-            type="url"
-            name="url"
-            id="url-{index}"
-            placeholder="Enter url"
-            required
-            bind:value={url} />
-          {#if url}
-            <div
-              class="absolute right-0 top-0 mt-3 mr-3"
-              on:click={() => clearInput(index)}>
-              <IconClose />
-            </div>
-          {/if}
-        </div>
+        <FormUrl bind:url {index} />
       {/each}
 
       <ButtonAdd on:click={addUrlInput} />
