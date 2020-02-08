@@ -163,7 +163,8 @@
       <br />
 
       {#if urls.length > 1}
-        <FormShowToc show="showToc" />
+        {showToc}
+        <FormShowToc bind:yes={showToc} />
       {/if}
 
       <div class="flex flex-wrap -mx-3 mb-2">
