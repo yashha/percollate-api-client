@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
 
-  import IconClose from './svg/icon-close.svelte';
+  import IconClose from '../svg/icon-close.svelte';
   import ButtonAdd from '../components/ButtonAdd.svelte';
   import ButtonDownload from '../components/ButtonDownload.svelte';
   import FormCheckbox from '../components/FormCheckbox.svelte';
