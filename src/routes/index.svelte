@@ -1,6 +1,9 @@
 <script>
   import { onMount } from 'svelte';
 
+  import IconClose from './svg/icon-close.svelte';
+  import IconPlus from './svg/icon-plus.svelte';
+
   let urls = [''];
   let format = 'a5';
   let customCss = '';
@@ -55,7 +58,7 @@
         throw new Error('Wrong fontsize');
       }
       computed_url =
-        'https://readtheweb.herokuapp.com/load.pdf?' +
+        'https://rusingeadtheweb.herokuapp.com/load.pdf?' +
         urls_query +
         `&pagesperside=${pagesPerSide}` +
         '&' +
@@ -146,19 +149,7 @@
             <div
               class="absolute right-0 top-0 mt-3 mr-3"
               on:click={() => clearInput(index)}>
-              <svg
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                stroke="currentColor"
-                stroke-width="2"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <line x1="15" y1="9" x2="9" y2="15" />
-                <line x1="9" y1="9" x2="15" y2="15" />
-              </svg>
+              <IconClose />
             </div>
           {/if}
         </div>
@@ -169,12 +160,7 @@
         title="Append additional page"
         class="bg-gray-300 hover:bg-gray-400 mt-4 float-right h-10 w-10
         text-gray-800 font-bold py-2 px-3 rounded inline-flex items-center">
-        <svg
-          class="h-24 w-24"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 8 8">
-          <path d="M3 0v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2z" />
-        </svg>
+        <IconPlus />
       </button>
 
       <br />
