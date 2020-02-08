@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
 
   import IconClose from './svg/icon-close.svelte';
-  import IconPlus from './svg/icon-plus.svelte';
+  import ButtonAdd from '../components/ButtonAdd.svelte';
 
   let urls = [''];
   let format = 'a5';
@@ -155,13 +155,7 @@
         </div>
       {/each}
 
-      <button
-        on:click={addUrlInput}
-        title="Append additional page"
-        class="bg-gray-300 hover:bg-gray-400 mt-4 float-right h-10 w-10
-        text-gray-800 font-bold py-2 px-3 rounded inline-flex items-center">
-        <IconPlus />
-      </button>
+      <ButtonAdd on:click={addUrlInput} />
 
       <br />
 
