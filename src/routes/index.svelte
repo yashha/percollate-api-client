@@ -3,6 +3,7 @@
 
   import IconClose from './svg/icon-close.svelte';
   import ButtonAdd from '../components/ButtonAdd.svelte';
+  import FormShowToc from '../components/FormShowToc.svelte';
 
   let urls = [''];
   let format = 'a5';
@@ -162,15 +163,7 @@
       <br />
 
       {#if urls.length > 1}
-        <div class="md:flex md:items-center mb-6">
-          <label class="md:w-2/3 font-bold">
-            <input
-              class="mr-2 leading-tight"
-              type="checkbox"
-              bind:value={showToc} />
-            <span class="text-sm text-gray-700">Show table of contents!</span>
-          </label>
-        </div>
+        <FormShowToc show="showToc" />
       {/if}
 
       <div class="flex flex-wrap -mx-3 mb-2">
