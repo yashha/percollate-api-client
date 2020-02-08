@@ -6,6 +6,7 @@
   import ButtonDownload from '../components/ButtonDownload.svelte';
   import FormCheckbox from '../components/FormCheckbox.svelte';
   import FormDropdown from '../components/FormDropdown.svelte';
+  import FormNumber from '../components/FormNumber.svelte';
   import FormUrl from '../components/FormUrl.svelte';
 
   let urls = [''];
@@ -93,15 +94,6 @@
     width: 100%;
     height: 600px;
   }
-  .input-number-hide {
-    -moz-appearance: textfield;
-  }
-  /* Webkit browsers like Safari and Chrome */
-  .input-number-hide::-webkit-inner-spin-button,
-  .input-number-hide::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
 </style>
 
 <svelte:head>
@@ -155,60 +147,7 @@
           <option value="2">2</option>
           <option value="4">4</option>
         </FormDropdown>
-        <div class="w-full md:w-1/4 px-3 mb-6 md:mb-0">
-          <label
-            class="block uppercase tracking-wide text-gray-700 text-xs font-bold
-            mb-2"
-            for="fontsize">
-            FONT SIZE
-          </label>
-          <div class="relative">
-            <input
-              type="number"
-              min="8"
-              max="16"
-              bind:value={fontSize}
-              id="fontsize"
-              class="block appearance-none w-full bg-gray-200 border
-              border-gray-200 text-gray-700 py-3 px-4 pl-4 pr-4 rounded
-              leading-tight focus:outline-none focus:bg-white
-              focus:border-gray-500 input-number-hide" />
-            <div
-              class="absolute inset-y-0 right-0 flex items-center px-2
-              text-gray-700 h-6"
-              on:click={() => (fontSize = Math.min(fontSize + 1, 16))}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-4 w-4 mt-2">
-                <polyline points="18 15 12 9 6 15" />
-              </svg>
-            </div>
-            <div
-              class="absolute bottom-0 right-0 flex items-center px-2
-              text-gray-700 h-6"
-              on:click={() => (fontSize = Math.max(fontSize - 1, 8))}>
-              <svg
-                class="h-4 w-4 mb-2"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </div>
-          </div>
-        </div>
+        <FormNumber label="FONT SIZE" name="fontsize" bind:value={fontSize} />
         <div class="w-full md:w-1/3 px-3 mt-6 mb-6 md:mb-0">
           <details>
             <summary>Custom CSS</summary>
