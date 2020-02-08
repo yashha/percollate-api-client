@@ -164,7 +164,6 @@
       <br />
 
       {#if urls.length > 1}
-        {showToc}
         <FormShowToc bind:yes={showToc} />
       {/if}
 
