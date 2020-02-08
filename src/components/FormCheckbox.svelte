@@ -1,6 +1,6 @@
 <script>
   export let yes = false;
-  export let label = 'Show table of contents!';
+  export let label = '';
 </script>
 
 <div class="md:flex md:items-center mb-6">

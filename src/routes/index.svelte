@@ -4,7 +4,7 @@
   import IconClose from './svg/icon-close.svelte';
   import ButtonAdd from '../components/ButtonAdd.svelte';
   import ButtonDownload from '../components/ButtonDownload.svelte';
-  import FormShowToc from '../components/FormShowToc.svelte';
+  import FormCheckbox from '../components/FormCheckbox.svelte';
 
   let urls = [''];
   let format = 'a5';
@@ -164,7 +164,7 @@
       <br />
 
       {#if urls.length > 1}
-        <FormShowToc bind:yes={showToc} />
+        <FormCheckbox bind:yes={showToc} label="Show table of contents!" />
       {/if}
 
       <div class="flex flex-wrap -mx-3 mb-2">
