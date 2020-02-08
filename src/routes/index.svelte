@@ -14,6 +14,11 @@
 
   $: {
     urls = [...urls];
+    format = format;
+    customCss = customCss;
+    pagesPerSide = pagesPerSide;
+    fontSize = fontSize;
+    showToc = showToc;
     isLoaded = false;
     buildUrl();
   }
