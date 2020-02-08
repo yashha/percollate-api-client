@@ -35,6 +35,13 @@
   function addUrlInput() {
     urls = [...urls, ''];
   }
+  function isValidUrl() {
+    for (const url of urls) {
+      if (url !== '') {
+        new URL(url);
+      }
+    }
+  }
   function buildUrl() {
     try {
       let urls_query = '';
@@ -333,7 +340,7 @@
       </div>
     </form>
 
-    {#if computed_url}
+    {#if urls.length > 0 && urls[0] !== ''}
       <div class="flex justify-center">
         <a
           class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4
