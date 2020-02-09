@@ -4,6 +4,7 @@
   import IconClose from '../svg/icon-close.svelte';
   import ButtonAdd from '../components/ButtonAdd.svelte';
   import ButtonDownload from '../components/ButtonDownload.svelte';
+  import ButtonShare from '../components/ButtonShare.svelte';
   import FormCheckbox from '../components/FormCheckbox.svelte';
   import FormDropdown from '../components/FormDropdown.svelte';
   import FormNumber from '../components/FormNumber.svelte';
@@ -17,6 +18,8 @@
   let showToc = false;
 
   let computed_url = '';
+  let share_url = '';
+  let mounted = false;
 
   $: isLoaded = false;
 
@@ -29,6 +32,7 @@
     showToc = showToc;
     isLoaded = false;
     buildUrl();
+    createShareUrl();
   }
 
   async function iframeLoaded() {
@@ -75,8 +79,49 @@
       computed_url = '';
     }
   }
-
+  function createShareUrl() {
+    if (!mounted) {
+      return;
+    }
+    if ('URLSearchParams' in window) {
+      var searchParams = new URLSearchParams(window.location.search);
+      for (const url of urls) {
+        searchParams.append('url', encodeURIComponent(url));
+      }
+      searchParams.set('format', encodeURIComponent(format));
+      searchParams.set('fontsize', encodeURIComponent(fontSize));
+      searchParams.set('pagesperside', encodeURIComponent(pagesPerSide));
+      searchParams.set('customcss', encodeURIComponent(customCss));
+      if (showToc) {
+        searchParams.set('toc', encodeURIComponent(showToc));
+      }
+    }
+    share_url = '/?' + searchParams.toString();
+  }
+  function loadQuery() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.getAll('url').length > 0) {
+      urls = urlParams.getAll('url');
+    }
+    format = urlParams.get('format')
+      ? decodeURIComponent(urlParams.get('format'))
+      : format;
+    fontSize = urlParams.get('fontsize')
+      ? decodeURIComponent(urlParams.get('fontsize'))
+      : fontSize;
+    pagesPerSide = urlParams.get('pagesperside')
+      ? decodeURIComponent(urlParams.get('pagesperside'))
+      : pagesPerSide;
+    showToc = urlParams.get('toc')
+      ? decodeURIComponent(urlParams.get('toc'))
+      : showToc;
+    customCss = urlParams.get('customcss')
+      ? decodeURIComponent(urlParams.get('customcss'))
+      : customCss;
+  }
   onMount(async () => {
+    mounted = true;
+    loadQuery();
     await fetch('https://readtheweb.herokuapp.com/');
   });
 </script>
@@ -171,6 +216,7 @@
     {#if urls.length > 0 && urls[0] !== ''}
       <ButtonDownload url={computed_url} />
     {/if}
+    <ButtonShare url={share_url} />
     <br />
 
     <div class="block w-full">
