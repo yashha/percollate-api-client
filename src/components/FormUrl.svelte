@@ -28,7 +28,10 @@
     required
     bind:value={url} />
   {#if url}
-    <div class="absolute right-0 top-0 mt-3 mr-3" on:click={() => (url = '')}>
+    <div
+      style="width: 24px"
+      class="absolute right-0 top-0 mt-3 mr-3"
+      on:click={() => (url = '')}>
       <IconClose />
     </div>
   {/if}
