@@ -37,9 +37,6 @@
   function onSubmit(e) {
     e.preventDefault();
   }
-  function clearInput(index) {
-    urls[index] = '';
-  }
   function addUrlInput() {
     urls = [...urls, ''];
   }
