@@ -60,7 +60,7 @@
         throw new Error('Wrong fontsize');
       }
       computed_url =
-        'https://rusingeadtheweb.herokuapp.com/load.pdf?' +
+        'https://readtheweb.herokuapp.com/load.pdf?' +
         urls_query +
         `&pagesperside=${pagesPerSide}` +
         '&' +
