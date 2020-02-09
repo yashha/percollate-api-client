@@ -85,7 +85,7 @@
     }
     if ('URLSearchParams' in window) {
       var searchParams = new URLSearchParams(window.location.search);
-      searchParams.remove('url');
+      searchParams.delete('url');
       for (const url of urls) {
         searchParams.append('url', encodeURIComponent(url));
       }
