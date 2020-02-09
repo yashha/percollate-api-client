@@ -1,4 +1,4 @@
-<svg class="w-5 h-5 mr-2" viewBox="0 0 12 16" version="1.1" aria-hidden="true">
+<svg class="w-5 h-5 mr-2" viewBox="0 0 12 16" aria-hidden="true">
   <path
     fill-rule="evenodd"
     d="M11 10h1v3c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V3c0-.55.45-1
