@@ -11,9 +11,8 @@
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "test": "run-p --race dev cy:run",
-    "eslint": "eslint -c .eslintrc.json *.{js,svelte}",
-    "prettier": "prettier --write *.{ts,tsx,js,jsx,json,css,md,svelte}",
-    "precommit": "node -v && lint-staged"
+    "eslint": "eslint -c .eslintrc.js *.{js,svelte}",
+    "prettier": "prettier --write *.{ts,tsx,js,jsx,json,css,md,svelte}"
   },
   "husky": {
     "hooks": {
@@ -22,7 +21,7 @@
   },
   "lint-staged": {
     "*.{js,svelte}": [
-      "eslint -c .eslintrc.json"
+      "eslint -c .eslintrc.js"
     ],
     "*.{ts,tsx,js,jsx,json,css,md,svelte}": [
       "prettier --write",
