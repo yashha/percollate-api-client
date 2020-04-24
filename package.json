@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "sapper dev",
-    "build:ssr": "sapper build",
-    "build": "sapper export",
+    "build": "sapper build",
+    "build:static": "sapper export",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
@@ -30,7 +30,8 @@
   },
   "dependencies": {
     "compression": "^1.7.4",
-    "polka": "^0.5.2",
+    "express": "^4.17.1",
+    "serverless-http": "^2.3.2",
     "sirv": "^0.4.2",
     "svelte-preprocess-sass": "^0.2.0"
   },
