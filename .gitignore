@@ -1,3 +1,6 @@
 __sapper__
 node_modules
 .idea
+
+# Local Vercel folder
+.vercel
