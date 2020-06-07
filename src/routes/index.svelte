@@ -10,6 +10,8 @@
   import FormNumber from '../components/FormNumber.svelte';
   import FormUrl from '../components/FormUrl.svelte';
 
+  const API_URL = 'https://api.readtheweb.de';
+
   let urls = [''];
   let format = 'a5';
   let customCss = '';
@@ -64,7 +66,8 @@
         throw new Error('Wrong fontsize');
       }
       computed_url =
-        'https://readtheweb.herokuapp.com/load.pdf?' +
+        API_URL +
+        '/load.pdf?' +
         urls_query +
         `&pagesperside=${pagesPerSide}` +
         '&' +
@@ -123,7 +126,7 @@
   onMount(async () => {
     mounted = true;
     loadQuery();
-    await fetch('https://readtheweb.herokuapp.com/');
+    await fetch(API_URL);
   });
 </script>
 
