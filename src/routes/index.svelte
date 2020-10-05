@@ -102,7 +102,7 @@
   function loadQuery() {
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.getAll('url').length > 0) {
-      urls = urlParams.getAll('url');
+      urls = urlParams.getAll('url').map(decodeURIComponent);
     }
     format = urlParams.get('format')
       ? decodeURIComponent(urlParams.get('format'))
