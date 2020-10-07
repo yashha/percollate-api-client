@@ -65,7 +65,7 @@
         fontsize: fontSize,
         pagesperside: pagesPerSide,
         customcss: customCss,
-        toc: showToc ? true : null
+        toc: showToc ? true : false
       });
   }
   function loadQuery() {
