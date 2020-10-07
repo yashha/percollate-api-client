@@ -29,7 +29,6 @@
     pagesPerSide = pagesPerSide;
     fontSize = fontSize;
     showToc = showToc;
-    isLoaded = false;
     buildUrl();
     createShareUrl();
   }
