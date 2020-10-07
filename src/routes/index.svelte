@@ -50,8 +50,7 @@
       css,
       pagesperside: pagesPerSide,
       urls,
-
-      toc: showToc ? true : null
+      toc: showToc ? true : false
     });
   }
   function createShareUrl() {
