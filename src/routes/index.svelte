@@ -22,8 +22,6 @@
   let share_url = '';
   let mounted = false;
 
-  $: isLoaded = false;
-
   $: {
     urls = [...urls];
     format = format;
@@ -36,9 +34,6 @@
     createShareUrl();
   }
 
-  async function iframeLoaded() {
-    isLoaded = true;
-  }
   function onSubmit(e) {
     e.preventDefault();
   }
@@ -183,16 +178,5 @@
     {/if}
     <ButtonShare url={share_url} />
     <br />
-
-    <div class="block w-full">
-      {#if computed_url}
-        <iframe
-          class="paclient__iframe {isLoaded && urls[0] ? 'loaded' : ''}"
-          src={computed_url}
-          title="test"
-          on:load={iframeLoaded} />
-      {/if}
-      {#if !isLoaded && computed_url}Loading ... this could take up to 30s{/if}
-    </div>
   </div>
 </div>
