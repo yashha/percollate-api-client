@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import urlcat, { query } from 'urlcat';
 
   import IconClose from '../svg/icon-close.svelte';
   import ButtonAdd from '../components/ButtonAdd.svelte';
@@ -44,86 +45,55 @@
   function addUrlInput() {
     urls = [...urls, ''];
   }
-  function isValidUrl() {
-    for (const url of urls) {
-      if (url !== '') {
-        new URL(url);
-      }
-    }
-  }
   function buildUrl() {
-    try {
-      let urls_query = '';
-      for (const url of urls) {
-        if (url !== '') {
-          new URL(url);
-          urls_query += '&url=' + encodeURIComponent(url);
-        }
-      }
-      if (fontSize < 8 || fontSize > 16) {
-        throw new Error('Wrong fontsize');
-      }
-      computed_url =
-        'https://readtheweb.herokuapp.com/load.pdf?' +
-        urls_query +
-        `&pagesperside=${pagesPerSide}` +
-        '&' +
-        'css=' +
-        encodeURIComponent(`html { font-size: ${fontSize}pt }`) +
-        encodeURIComponent(`@page { size: ${format} portrait }`) +
-        encodeURIComponent(customCss);
-      if (showToc) {
-        computed_url += '&toc=true';
-      }
-    } catch (e) {
-      computed_url = '';
-    }
+    const apiurl = 'https://api.readtheweb.de';
+    const css = `
+      html { font-size: ${fontSize}pt }
+      @page { size: ${format} portrait }
+      ${customCss}
+    `;
+    computed_url = urlcat(apiurl, '/load.pdf', {
+      css,
+      pagesperside: pagesPerSide,
+      urls,
+
+      toc: showToc ? true : null
+    });
   }
   function createShareUrl() {
     if (!mounted) {
       return;
     }
-    if ('URLSearchParams' in window) {
-      var searchParams = new URLSearchParams(window.location.search);
-      searchParams.delete('url');
-      for (const url of urls) {
-        searchParams.append('url', encodeURIComponent(url));
-      }
-      searchParams.set('format', encodeURIComponent(format));
-      searchParams.set('fontsize', encodeURIComponent(fontSize));
-      searchParams.set('pagesperside', encodeURIComponent(pagesPerSide));
-      searchParams.set('customcss', encodeURIComponent(customCss));
-      if (showToc) {
-        searchParams.set('toc', encodeURIComponent(showToc));
-      }
-    }
-    share_url = '/?' + searchParams.toString();
+    share_url =
+      '/?' +
+      query({
+        urls,
+        format,
+        fontsize: fontSize,
+        pagesperside: pagesPerSide,
+        customcss: customCss,
+        toc: showToc ? true : null
+      });
   }
   function loadQuery() {
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.getAll('url').length > 0) {
-      urls = urlParams.getAll('url').map(decodeURIComponent);
+    const urlParams = new URLSearchParams(decodeURI(window.location.search));
+    if (urlParams.get('urls') && urlParams.get('urls').split(',').length > 0) {
+      urls = urlParams.get('urls').split(',');
     }
-    format = urlParams.get('format')
-      ? decodeURIComponent(urlParams.get('format'))
-      : format;
-    fontSize = urlParams.get('fontsize')
-      ? decodeURIComponent(urlParams.get('fontsize'))
-      : fontSize;
+    format = urlParams.get('format') ? urlParams.get('format') : format;
+    fontSize = urlParams.get('fontsize') ? urlParams.get('fontsize') : fontSize;
     pagesPerSide = urlParams.get('pagesperside')
-      ? decodeURIComponent(urlParams.get('pagesperside'))
+      ? urlParams.get('pagesperside')
       : pagesPerSide;
-    showToc = urlParams.get('toc')
-      ? decodeURIComponent(urlParams.get('toc'))
-      : showToc;
+    showToc = urlParams.get('toc') ? urlParams.get('toc') : showToc;
     customCss = urlParams.get('customcss')
-      ? decodeURIComponent(urlParams.get('customcss'))
+      ? urlParams.get('customcss')
       : customCss;
   }
   onMount(async () => {
     mounted = true;
     loadQuery();
-    await fetch('https://readtheweb.herokuapp.com/');
+    await fetch('https://api.readtheweb.de/');
   });
 </script>
 

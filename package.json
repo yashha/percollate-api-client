@@ -32,7 +32,8 @@
     "compression": "^1.7.4",
     "polka": "^0.5.2",
     "sirv": "^0.4.2",
-    "svelte-preprocess-sass": "^0.2.0"
+    "svelte-preprocess-sass": "^0.2.0",
+    "urlcat": "^2.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
