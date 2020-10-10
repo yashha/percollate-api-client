@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import IconUp from '../svg/icon-up.svelte';
   import IconDown from '../svg/icon-down.svelte';
 

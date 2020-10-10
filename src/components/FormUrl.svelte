@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import IconClose from '../svg/icon-close.svelte';
 
   export let url = '';

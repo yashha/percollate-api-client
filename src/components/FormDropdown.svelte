@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import IconDown from '../svg/icon-down.svelte';
 
   export let value;

@@ -1,0 +1,5 @@
+{
+  "extends": "@tsconfig/svelte/tsconfig.json",
+  "include": ["src/**/*", "stylelint.config.js"],
+  "exclude": ["node_modules/*", "public/*"]
+}

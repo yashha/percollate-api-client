@@ -1,9 +1,0 @@
-{
-  "name": "Percollate Web API",
-  "short_name": "percollateweb",
-  "start_url": ".",
-  "display": "standalone",
-  "background_color" : "#fff" ,
-  "description": "Make the web readable and printable by generating clean pdf.",
-  "theme_color": "#38b2ac"
-}
