@@ -1,17 +1,15 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
-  import urlcat, { query } from 'urlcat';
 
-  import IconClose from '../svg/icon-close.svelte';
-  import ButtonAdd from '../components/ButtonAdd.svelte';
-  import ButtonDownload from '../components/ButtonDownload.svelte';
-  import ButtonShare from '../components/ButtonShare.svelte';
-  import FormCheckbox from '../components/FormCheckbox.svelte';
-  import FormDropdown from '../components/FormDropdown.svelte';
-  import FormNumber from '../components/FormNumber.svelte';
-  import FormUrl from '../components/FormUrl.svelte';
+  import ButtonAdd from './components/ButtonAdd.svelte';
+  import ButtonDownload from './components/ButtonDownload.svelte';
+  import ButtonShare from './components/ButtonShare.svelte';
+  import FormCheckbox from './components/FormCheckbox.svelte';
+  import FormDropdown from './components/FormDropdown.svelte';
+  import FormNumber from './components/FormNumber.svelte';
+  import FormUrl from './components/FormUrl.svelte';
 
-  let urls = [''];
+  let urls: string[] = [''];
   let format = 'a5';
   let customCss = '';
   let pagesPerSide = '1';
@@ -29,56 +27,49 @@
     pagesPerSide = pagesPerSide;
     fontSize = fontSize;
     showToc = showToc;
-    buildUrl();
+    computed_url = buildUrl().href;
     createShareUrl();
   }
 
-  function onSubmit(e) {
+  function onSubmit(e: Event) {
     e.preventDefault();
   }
   function addUrlInput() {
     urls = [...urls, ''];
   }
+  function createShareUrl() {
+    if (!mounted) {
+      return;
+    }
+    share_url = '?' + buildUrl().searchParams.toString();
+  }
   function buildUrl() {
-    const apiurl = 'https://api.readtheweb.de';
     const css = `
       html { font-size: ${fontSize}pt }
       @page { size: ${format} portrait }
       ${customCss}
     `;
-    computed_url = urlcat(apiurl, '/load.pdf', {
-      css,
-      pagesperside: pagesPerSide,
-      urls,
-      toc: showToc ? true : false
-    });
-  }
-  function createShareUrl() {
-    if (!mounted) {
-      return;
-    }
-    share_url =
-      '/?' +
-      query({
-        urls,
-        format,
-        fontsize: fontSize,
-        pagesperside: pagesPerSide,
-        customcss: customCss,
-        toc: showToc ? true : false
-      });
+    const apiurl = 'https://api.readtheweb.de';
+    const myUrlWithParams = new URL(apiurl);
+    myUrlWithParams.searchParams.append('css', css);
+    myUrlWithParams.searchParams.append('pagesperside', pagesPerSide);
+    urls.forEach((item) => {
+      myUrlWithParams.searchParams.append('url', item);
+    })
+    myUrlWithParams.searchParams.append('toc', showToc ? 'true' : 'false');
+    return myUrlWithParams;
   }
   function loadQuery() {
     const urlParams = new URLSearchParams(decodeURI(window.location.search));
-    if (urlParams.get('urls') && urlParams.get('urls').split(',').length > 0) {
-      urls = urlParams.get('urls').split(',');
+    if (urlParams.get('url')) {
+      urls = urlParams.getAll('url');
     }
     format = urlParams.get('format') ? urlParams.get('format') : format;
-    fontSize = urlParams.get('fontsize') ? urlParams.get('fontsize') : fontSize;
+    fontSize = urlParams.get('fontsize') ? parseInt(urlParams.get('fontsize')) : fontSize;
     pagesPerSide = urlParams.get('pagesperside')
       ? urlParams.get('pagesperside')
       : pagesPerSide;
-    showToc = urlParams.get('toc') ? urlParams.get('toc') : showToc;
+    showToc = urlParams.get('toc') ? urlParams.get('toc') == 'true' : showToc;
     customCss = urlParams.get('customcss')
       ? urlParams.get('customcss')
       : customCss;
@@ -86,27 +77,14 @@
   onMount(async () => {
     mounted = true;
     loadQuery();
-    await fetch('https://api.readtheweb.de/');
   });
 </script>
-
-<style type="text/scss">
-  .paclient__iframe {
-    position: absolute;
-    height: 0;
-  }
-  .paclient__iframe.loaded {
-    position: relative;
-    width: 100%;
-    height: 600px;
-  }
-</style>
 
 <div class="container w-full md:max-w-3xl mx-auto pt-20">
 
   <div
     class="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal"
-    style="font-family:Georgia,serif;">
+    style="font-family: Georgia, serif;">
     <div class="font-sans">
       <h1
         class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-3xl

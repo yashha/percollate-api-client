@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   export let yes = false;
   export let label = '';
 </script>

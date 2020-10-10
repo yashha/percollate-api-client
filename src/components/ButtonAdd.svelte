@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import IconPlus from '../svg/icon-plus.svelte';
 </script>
 
