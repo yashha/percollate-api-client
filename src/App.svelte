@@ -56,7 +56,9 @@
     urls.forEach((item) => {
       myUrlWithParams.searchParams.append('url', item);
     })
-    myUrlWithParams.searchParams.append('toc', showToc ? 'true' : 'false');
+    if (showToc) {
+      myUrlWithParams.searchParams.append('toc', 'true');
+    }
     return myUrlWithParams;
   }
   function loadQuery() {
