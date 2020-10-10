@@ -51,7 +51,6 @@
     `;
     const apiurl = 'https://api.readtheweb.de/load.pdf';
     const myUrlWithParams = new URL(apiurl);
-    myUrlWithParams.searchParams.append('css', css);
     myUrlWithParams.searchParams.append('pagesperside', pagesPerSide);
     urls.forEach((item) => {
       myUrlWithParams.searchParams.append('url', item);
@@ -59,6 +58,7 @@
     if (showToc) {
       myUrlWithParams.searchParams.append('toc', 'true');
     }
+    myUrlWithParams.searchParams.append('css', css);
     return myUrlWithParams;
   }
   function loadQuery() {
