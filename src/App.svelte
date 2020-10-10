@@ -49,7 +49,7 @@
       @page { size: ${format} portrait }
       ${customCss}
     `;
-    const apiurl = 'https://api.readtheweb.de';
+    const apiurl = 'https://api.readtheweb.de/load.pdf';
     const myUrlWithParams = new URL(apiurl);
     myUrlWithParams.searchParams.append('css', css);
     myUrlWithParams.searchParams.append('pagesperside', pagesPerSide);
