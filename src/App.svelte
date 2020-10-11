@@ -16,8 +16,8 @@
   let fontSize = 12;
   let showToc = false;
 
-  let computed_url = '';
-  let share_url = '';
+  let downloadUrl = '';
+  let shareUrl = '';
   let mounted = false;
 
   $: {
@@ -27,7 +27,7 @@
     pagesPerSide = pagesPerSide;
     fontSize = fontSize;
     showToc = showToc;
-    computed_url = buildUrl().href;
+    downloadUrl = buildUrl().href;
     createShareUrl();
   }
 
@@ -41,7 +41,7 @@
     if (!mounted) {
       return;
     }
-    share_url = '?' + buildUrl().searchParams.toString();
+    shareUrl = '?' + buildUrl().searchParams.toString();
   }
   function buildUrl() {
     const css = `
@@ -152,9 +152,9 @@
     </form>
 
     {#if urls.length > 0 && urls[0] !== ''}
-      <ButtonDownload url={computed_url} />
+      <ButtonDownload url={downloadUrl} />
     {/if}
-    <ButtonShare url={share_url} />
+    <ButtonShare url={shareUrl} />
     <br />
   </div>
 </div>
