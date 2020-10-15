@@ -27,7 +27,15 @@
     pagesPerSide = pagesPerSide;
     fontSize = fontSize;
     showToc = showToc;
-    downloadUrl = buildUrl().href;
+
+    const css = `
+      html { font-size: ${fontSize}pt }
+      @page { size: ${format} portrait }
+      ${customCss}
+    `;
+    const url = buildUrl();
+    url.searchParams.append('css', css);
+    downloadUrl = url.href;
     createShareUrl();
   }
 
@@ -44,11 +52,6 @@
     shareUrl = '?' + buildUrl().searchParams.toString();
   }
   function buildUrl() {
-    const css = `
-      html { font-size: ${fontSize}pt }
-      @page { size: ${format} portrait }
-      ${customCss}
-    `;
     const apiurl = 'https://api.readtheweb.de/load.pdf';
     const myUrlWithParams = new URL(apiurl);
     myUrlWithParams.searchParams.append('pagesperside', pagesPerSide);
@@ -58,7 +61,9 @@
     if (showToc) {
       myUrlWithParams.searchParams.append('toc', 'true');
     }
-    myUrlWithParams.searchParams.append('css', css);
+    myUrlWithParams.searchParams.append('fontsize', fontSize.toString());
+    myUrlWithParams.searchParams.append('format', format);
+    myUrlWithParams.searchParams.append('customcss', customCss);
     return myUrlWithParams;
   }
   function loadQuery() {
@@ -71,7 +76,7 @@
     pagesPerSide = urlParams.get('pagesperside')
       ? urlParams.get('pagesperside')
       : pagesPerSide;
-    showToc = urlParams.get('toc') ? urlParams.get('toc') == 'true' : showToc;
+    showToc = urlParams.get('toc') ? urlParams.get('toc') === 'true' : showToc;
     customCss = urlParams.get('customcss')
       ? urlParams.get('customcss')
       : customCss;
