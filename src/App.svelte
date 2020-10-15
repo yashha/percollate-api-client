@@ -9,7 +9,7 @@
   import FormNumber from './components/FormNumber.svelte';
   import FormUrl from './components/FormUrl.svelte';
 
-  let urls: string[] = [''];
+  let urls = [''];
   let format = 'a5';
   let customCss = '';
   let pagesPerSide = '1';
@@ -149,7 +149,7 @@
                 border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded
                 leading-tight focus:outline-none focus:bg-white
                 focus:border-gray-500"
-                id="customcss" />
+                id="customcss"></textarea>
             </div>
           </details>
         </div>
