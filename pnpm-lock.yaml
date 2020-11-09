@@ -2,15 +2,15 @@ dependencies:
   '@tsconfig/svelte': 1.0.10
   postcss: 8.1.6
   postcss-import: 12.0.1
-  postcss-load-config: 2.1.2
+  postcss-load-config: 3.0.0
   postcss-preset-env: 6.7.0
   stylelint: 13.7.2
   stylelint-config-standard: 20.0.0_stylelint@13.7.2
   svelte: 3.29.6
-  svelte-check: 1.1.11_b0112197bb79ab0a30ca14c52856b449
+  svelte-check: 1.1.11_a483bfc4271ebc2e36cc98bb458b75a9
   svelte-hmr: 0.11.5_svelte@3.29.6
-  svelte-preprocess: 4.5.2_5ff29936e984bb709d1a27461276d90d
-  svite: 0.8.0_443cfbb1523fc07a6dbd63ab50348330
+  svelte-preprocess: 4.5.2_5fcefa3284210a031bda0bd9891999a3
+  svite: 0.8.0_2b73c52ccc577ac3ae25c100bd48658f
   tailwindcss: 1.9.6
   tslib: 2.0.3
   typescript: 4.0.5
@@ -1932,6 +1932,14 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-qmzzbnInYShcs3HsZRn1PiQ1sKk=
+  /import-cwd/3.0.0:
+    dependencies:
+      import-from: 3.0.0
+    dev: false
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-4pnzH16plW+hgvRECbDWpQl3cqtvSofHWh44met7ESfZ8UZOWWddm8hEyDTqREJ9RbYHY8gi8DqmaelApoOGMg==
   /import-fresh/2.0.0:
     dependencies:
       caller-path: 2.0.0
@@ -1958,6 +1966,14 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-M1238qev/VOqpHHUuAId7ja387E=
+  /import-from/3.0.0:
+    dependencies:
+      resolve-from: 5.0.0
+    dev: false
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-CiuXOFFSzkU5x/CR0+z7T91Iht4CXgfCxVOFRhh2Zyhg5wOpWvvDLQUsWl+gcN+QscYBjez8hDCt85O7RLDttQ==
   /import-lazy/4.0.0:
     dev: false
     engines:
@@ -3150,6 +3166,15 @@ packages:
       node: '>= 4'
     resolution:
       integrity: sha512-/rDeGV6vMUo3mwJZmeHfEDvwnTKKqQ0S7OHUi/kJvvtx3aWtyWG2/0ZWnzCt2keEclwN6Tf0DST2v9kITdOKYw==
+  /postcss-load-config/3.0.0:
+    dependencies:
+      cosmiconfig: 7.0.0
+      import-cwd: 3.0.0
+    dev: false
+    engines:
+      node: '>= 10'
+    resolution:
+      integrity: sha512-lErrN8imuEF1cSiHBV8MiR7HeuzlDpCGNtaMyYHlOBuJHHOGw6S4xOMZp8BbXPr7AGQp14L6PZDlIOpfFJ6f7w==
   /postcss-logical/3.0.0:
     dependencies:
       postcss: 7.0.35
@@ -4168,7 +4193,7 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
-  /svelte-check/1.1.11_b0112197bb79ab0a30ca14c52856b449:
+  /svelte-check/1.1.11_a483bfc4271ebc2e36cc98bb458b75a9:
     dependencies:
       chalk: 4.1.0
       chokidar: 3.4.3
@@ -4177,7 +4202,7 @@ packages:
       minimist: 1.2.5
       source-map: 0.7.3
       svelte: 3.29.6
-      svelte-preprocess: 4.5.2_5ff29936e984bb709d1a27461276d90d
+      svelte-preprocess: 4.5.2_5fcefa3284210a031bda0bd9891999a3
       typescript: 4.0.5
     dev: false
     hasBin: true
@@ -4203,13 +4228,13 @@ packages:
       svelte: '>=3.19.0'
     resolution:
       integrity: sha512-cmyE6pIEW1zbb3ADl4HEXGpYq8zkk9Zew938JznOTaLybarQQamHg5lTqnkLsJ2pQJ4tOQi06O0d0ZKKHhOy7w==
-  /svelte-preprocess/4.5.1_5ff29936e984bb709d1a27461276d90d:
+  /svelte-preprocess/4.5.1_5fcefa3284210a031bda0bd9891999a3:
     dependencies:
       '@types/pug': 2.0.4
       '@types/sass': 1.16.0
       detect-indent: 6.0.0
       postcss: 8.1.6
-      postcss-load-config: 2.1.2
+      postcss-load-config: 3.0.0
       strip-indent: 3.0.0
       svelte: 3.29.6
       typescript: 4.0.5
@@ -4258,13 +4283,13 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-fZiLMg+mJzp5y4bsvBtl6wE1WCp+s5L87BoKMONGLXk8HSZD5HuRJzxhM0yhM9LHF0jP5kYG22P2Vc/vrv4I0A==
-  /svelte-preprocess/4.5.2_5ff29936e984bb709d1a27461276d90d:
+  /svelte-preprocess/4.5.2_5fcefa3284210a031bda0bd9891999a3:
     dependencies:
       '@types/pug': 2.0.4
       '@types/sass': 1.16.0
       detect-indent: 6.0.0
       postcss: 8.1.6
-      postcss-load-config: 2.1.2
+      postcss-load-config: 3.0.0
       strip-indent: 3.0.0
       svelte: 3.29.6
       typescript: 4.0.5
@@ -4322,7 +4347,7 @@ packages:
     dev: false
     resolution:
       integrity: sha1-WPcc7jvVGbWdSyqEO2x95krAR2Q=
-  /svite/0.8.0_443cfbb1523fc07a6dbd63ab50348330:
+  /svite/0.8.0_2b73c52ccc577ac3ae25c100bd48658f:
     dependencies:
       '@rollup/pluginutils': 4.1.0
       chalk: 4.1.0
@@ -4344,7 +4369,7 @@ packages:
     hasBin: true
     optionalDependencies:
       rollup-plugin-visualizer: 4.2.0
-      svelte-preprocess: 4.5.1_5ff29936e984bb709d1a27461276d90d
+      svelte-preprocess: 4.5.1_5fcefa3284210a031bda0bd9891999a3
     peerDependencies:
       postcss: '*'
       postcss-load-config: '*'
@@ -4859,7 +4884,7 @@ specifiers:
   '@tsconfig/svelte': ^1.0.10
   postcss: ^8.1.6
   postcss-import: ^12.0.1
-  postcss-load-config: ^2.1.2
+  postcss-load-config: ^3.0.0
   postcss-preset-env: ^6.7.0
   stylelint: ^13.7.2
   stylelint-config-standard: ^20.0.0
