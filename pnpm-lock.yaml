@@ -10,7 +10,7 @@ dependencies:
   svelte-check: 1.1.11_b0112197bb79ab0a30ca14c52856b449
   svelte-hmr: 0.11.5_svelte@3.29.6
   svelte-preprocess: 4.5.2_5ff29936e984bb709d1a27461276d90d
-  svite: 0.7.2_443cfbb1523fc07a6dbd63ab50348330
+  svite: 0.8.0_443cfbb1523fc07a6dbd63ab50348330
   tailwindcss: 1.9.6
   tslib: 2.0.3
   typescript: 4.0.5
@@ -4203,7 +4203,7 @@ packages:
       svelte: '>=3.19.0'
     resolution:
       integrity: sha512-cmyE6pIEW1zbb3ADl4HEXGpYq8zkk9Zew938JznOTaLybarQQamHg5lTqnkLsJ2pQJ4tOQi06O0d0ZKKHhOy7w==
-  /svelte-preprocess/4.3.2_5ff29936e984bb709d1a27461276d90d:
+  /svelte-preprocess/4.5.1_5ff29936e984bb709d1a27461276d90d:
     dependencies:
       '@types/pug': 2.0.4
       '@types/sass': 1.16.0
@@ -4222,11 +4222,12 @@ packages:
       coffeescript: ^2.5.1
       less: ^3.11.3
       node-sass: '*'
-      postcss: ^7.0.32
+      postcss: ^7 || ^8
       postcss-load-config: ^2.1.0
       pug: ^3.0.0
       sass: ^1.26.8
       stylus: ^0.54.7
+      sugarss: ^2.0.0
       svelte: ^3.23.0
       typescript: ^3.9.5 || ^4.0.0
     peerDependenciesMeta:
@@ -4248,13 +4249,15 @@ packages:
         optional: true
       stylus:
         optional: true
+      sugarss:
+        optional: true
       svelte:
         optional: true
       typescript:
         optional: true
     requiresBuild: true
     resolution:
-      integrity: sha512-CmIsCr62y34qGS10/SC1l1VkmX0kZR6wncbGgRJ1qJftLDMEaazC3bWqoqAlrqyQFvpO0+xb44GQm4RKi/9sLQ==
+      integrity: sha512-fZiLMg+mJzp5y4bsvBtl6wE1WCp+s5L87BoKMONGLXk8HSZD5HuRJzxhM0yhM9LHF0jP5kYG22P2Vc/vrv4I0A==
   /svelte-preprocess/4.5.2_5ff29936e984bb709d1a27461276d90d:
     dependencies:
       '@types/pug': 2.0.4
@@ -4319,7 +4322,7 @@ packages:
     dev: false
     resolution:
       integrity: sha1-WPcc7jvVGbWdSyqEO2x95krAR2Q=
-  /svite/0.7.2_443cfbb1523fc07a6dbd63ab50348330:
+  /svite/0.8.0_443cfbb1523fc07a6dbd63ab50348330:
     dependencies:
       '@rollup/pluginutils': 4.1.0
       chalk: 4.1.0
@@ -4341,7 +4344,7 @@ packages:
     hasBin: true
     optionalDependencies:
       rollup-plugin-visualizer: 4.2.0
-      svelte-preprocess: 4.3.2_5ff29936e984bb709d1a27461276d90d
+      svelte-preprocess: 4.5.1_5ff29936e984bb709d1a27461276d90d
     peerDependencies:
       postcss: '*'
       postcss-load-config: '*'
@@ -4349,7 +4352,7 @@ packages:
       svelte-hmr: 0.11.1
       typescript: '*'
     resolution:
-      integrity: sha512-T8e0c6fSYuRJDoLl7uBlLV9DhiomyXypzDL5f5UieDUCPMiTlM2WtjeZCEX6FsQU8UpAFZVphDIzoFtXNJ5QvA==
+      integrity: sha512-1ppkYl0MpBnhLNkO0KTOD8alG7EaMcOP/k35gkM+gtQYQ3gpnINpfVogtt7+CaqQ3/Cvn66sNM6iLVk2qoY9zQ==
   /table/6.0.3:
     dependencies:
       ajv: 6.12.6
@@ -4864,7 +4867,7 @@ specifiers:
   svelte-check: ^1.1.11
   svelte-hmr: ^0.11.5
   svelte-preprocess: ^4.5.2
-  svite: ^0.7.2
+  svite: ^0.8.0
   tailwindcss: ^1.9.6
   tslib: ^2.0.3
   typescript: ^4.0.5
