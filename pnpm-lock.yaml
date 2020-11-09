@@ -8,9 +8,9 @@ dependencies:
   stylelint-config-standard: 20.0.0_stylelint@13.7.2
   svelte: 3.29.6
   svelte-check: 1.1.11_b0112197bb79ab0a30ca14c52856b449
-  svelte-hmr: 0.11.1_svelte@3.29.6
+  svelte-hmr: 0.11.5_svelte@3.29.6
   svelte-preprocess: 4.5.2_5ff29936e984bb709d1a27461276d90d
-  svite: 0.7.2_4c527bf9a7976a19e4f64ce3cb8b33f3
+  svite: 0.7.2_443cfbb1523fc07a6dbd63ab50348330
   tailwindcss: 1.9.6
   tslib: 2.0.3
   typescript: 4.0.5
@@ -4177,7 +4177,7 @@ packages:
       minimist: 1.2.5
       source-map: 0.7.3
       svelte: 3.29.6
-      svelte-preprocess: 4.3.2_5ff29936e984bb709d1a27461276d90d
+      svelte-preprocess: 4.5.2_5ff29936e984bb709d1a27461276d90d
       typescript: 4.0.5
     dev: false
     hasBin: true
@@ -4195,14 +4195,14 @@ packages:
       svelte: '>=3.19.0'
     resolution:
       integrity: sha512-s90yAPnfGE6rTbq9Vvq73z1XqLJ2qGw0VjorpwKfDZRIsB0/Ozu+uF5cyC1fS3dCyQcS2sZDMt4zQ/qDjDwa/Q==
-  /svelte-hmr/0.11.1_svelte@3.29.6:
+  /svelte-hmr/0.11.5_svelte@3.29.6:
     dependencies:
       svelte: 3.29.6
     dev: false
     peerDependencies:
       svelte: '>=3.19.0'
     resolution:
-      integrity: sha512-ecW9G/Pp7+RXXFvoWcF1WQsdajgigtdFH6qe25kMggmidvqTrzThkfELfR8cgnWng6eNVV4Y70vvb4MI/3N7OQ==
+      integrity: sha512-cmyE6pIEW1zbb3ADl4HEXGpYq8zkk9Zew938JznOTaLybarQQamHg5lTqnkLsJ2pQJ4tOQi06O0d0ZKKHhOy7w==
   /svelte-preprocess/4.3.2_5ff29936e984bb709d1a27461276d90d:
     dependencies:
       '@types/pug': 2.0.4
@@ -4216,6 +4216,7 @@ packages:
     dev: false
     engines:
       node: '>= 9.11.2'
+    optional: true
     peerDependencies:
       '@babel/core': ^7.10.2
       coffeescript: ^2.5.1
@@ -4318,7 +4319,7 @@ packages:
     dev: false
     resolution:
       integrity: sha1-WPcc7jvVGbWdSyqEO2x95krAR2Q=
-  /svite/0.7.2_4c527bf9a7976a19e4f64ce3cb8b33f3:
+  /svite/0.7.2_443cfbb1523fc07a6dbd63ab50348330:
     dependencies:
       '@rollup/pluginutils': 4.1.0
       chalk: 4.1.0
@@ -4329,7 +4330,7 @@ packages:
       lru-cache: 6.0.0
       rollup-plugin-svelte-hot: 0.10.0_svelte@3.29.6
       svelte: 3.29.6
-      svelte-hmr: 0.11.1_svelte@3.29.6
+      svelte-hmr: 0.11.5_svelte@3.29.6
       vite: 1.0.0-rc.4
     dev: false
     engines:
@@ -4859,10 +4860,10 @@ specifiers:
   postcss-preset-env: ^6.7.0
   stylelint: ^13.7.2
   stylelint-config-standard: ^20.0.0
-  svelte: 3.29.6
+  svelte: ^3.29.6
   svelte-check: ^1.1.11
-  svelte-hmr: 0.11.1
-  svelte-preprocess: 4.5.2
+  svelte-hmr: ^0.11.5
+  svelte-preprocess: ^4.5.2
   svite: ^0.7.2
   tailwindcss: ^1.9.6
   tslib: ^2.0.3
