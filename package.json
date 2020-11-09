@@ -4,7 +4,8 @@
   "scripts": {
     "validate": "svelte-check && tsc --noEmit",
     "dev": "svite -ts",
-    "build": "svite build -ts"
+    "build": "svite build -ts",
+    "start": "sirv dist -c -s -G -D -H 0.0.0.0 -p 3000"
   },
   "dependencies": {
     "@tsconfig/svelte": "^1.0.10",
@@ -23,5 +24,8 @@
     "tslib": "^2.0.3",
     "typescript": "^4.0.5",
     "urlcat": "^2.0.4"
+  },
+  "devDependencies": {
+    "sirv-cli": "^1.0.8"
   }
 }
