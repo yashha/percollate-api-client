@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" href="/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Read the web! - Make websites readable</title>
     <meta
       name="description"
@@ -11,12 +12,12 @@
     <meta name="twitter:card" content="Read the web! - Make websites readable">
     <link rel="canonical" href="https://readtheweb.de/">
     <meta name="theme-color" content="#1ebf06">
-  </head>
-  <body>
-    <script type="module" src="/src/index.ts"></script>
-
+	%svelte.head%
+</head>
+<body>
+	%svelte.body%
     <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101239683);</script>
-    <script async src="//static.getclicky.com/js"></script>
-    <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101239683ns.gif" /></p></noscript>
-  </body>
+    <script async src="https://static.getclicky.com/js"></script>
+    <noscript><p><img alt="Clicky" width="1" height="1" src="https://in.getclicky.com/101239683ns.gif" /></p></noscript>
+</body>
 </html>

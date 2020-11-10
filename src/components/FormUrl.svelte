@@ -1,5 +1,5 @@
 <script lang="ts">
-  import IconClose from '../svg/icon-close.svelte';
+  import IconClose from './svg/icon-close.svelte';
 
   export let url = '';
   export let index;

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import IconDownload from '../svg/icon-download.svelte';
+  import IconDownload from './svg/icon-download.svelte';
 
   export let url;
 </script>

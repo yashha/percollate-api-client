@@ -1,9 +1,6 @@
 {
-  "extends": "@tsconfig/svelte/tsconfig.json",
-  "include": ["src/**/*", "stylelint.config.js"],
-  "exclude": ["node_modules/*", "public/*"],
-  "compilerOptions": {
-    "module": "esnext",
-    "types": ["svelte", "vite/dist/importMeta"]
+	"extends": "@tsconfig/svelte/tsconfig.json",
+	"include": ["src/**/*", "stylelint.config.js"],
+	"exclude": ["node_modules/*", "public/*"]
   }
-}
+  

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import IconDown from '../svg/icon-down.svelte';
+  import IconDown from './svg/icon-down.svelte';
 
   export let value;
   export let label = '';
