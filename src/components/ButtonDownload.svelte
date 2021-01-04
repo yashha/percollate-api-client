@@ -1,15 +1,15 @@
 <script lang="ts">
-  import IconDownload from './svg/icon-download.svelte';
+import IconDownload from './svg/icon-download.svelte';
 
-  export let url;
+export let url;
 </script>
 
 <div class="flex justify-center">
   <a
-    class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4
-    rounded inline-flex items-center"
-    href={url}
-    download>
+    class="inline-flex items-center py-2 px-4 font-bold text-gray-800 bg-gray-300 rounded hover:bg-gray-400"
+    href="{url}"
+    download
+  >
     <IconDownload />
     <span>Download</span>
   </a>
