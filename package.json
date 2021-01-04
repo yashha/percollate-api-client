@@ -13,7 +13,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-node": "^1.0.0-next.0",
 		"@sveltejs/adapter-static": "^1.0.0-next.0",
-		"@sveltejs/kit": "^1.0.0-next.8",
+		"@sveltejs/kit": "^1.0.0-next.15",
 		"@sveltejs/snowpack-config": "^1.0.0-next.0",
 		"@tsconfig/svelte": "^1.0.10",
 		"cssnano": "^4.1.10",
