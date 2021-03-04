@@ -1,11 +1,10 @@
 <script lang="ts">
-  import IconPlus from '../svg/icon-plus.svelte';
+import IconPlus from './svg/icon-plus.svelte';
 </script>
 
 <button
   on:click
   title="Append additional page"
-  class="bg-gray-300 hover:bg-gray-400 mt-4 float-right h-10 w-10 text-gray-800
-  font-bold py-2 px-3 rounded inline-flex items-center">
+  class="inline-flex float-right items-center py-2 px-3 mt-4 w-10 h-10 font-bold text-gray-800 bg-gray-300 rounded hover:bg-gray-400">
   <IconPlus />
 </button>
