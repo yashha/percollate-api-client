@@ -19,8 +19,8 @@ let showToc = false;
 let downloadUrl = '';
 let shareUrl = '';
 let mounted = false;
-const advanced: boolean = (new URLSearchParams(decodeURI(window.location.search)))
-  .get('advanced') === "";
+const advanced: boolean =
+  new URLSearchParams(decodeURI(window.location.search)).get('advanced') === '';
 
 $: {
   urls = [...urls];
@@ -157,7 +157,7 @@ onMount(async () => {
     </form>
     <div class="flex justify-center mx-auto mt-6 space-x-4">
       {#if urls.length > 0 && urls[0] !== ''}
-        <span><ButtonDownload url="{downloadUrl}"/></span>
+        <span><ButtonDownload url="{downloadUrl}" /></span>
       {/if}
       <span><ButtonShare url="{shareUrl}" /></span>
     </div>

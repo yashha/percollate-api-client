@@ -11,12 +11,12 @@
 </style>
 
 <script lang="ts">
-import IconUp from "./svg/icon-up.svelte";
-import IconDown from "./svg/icon-down.svelte";
+import IconUp from './svg/icon-up.svelte';
+import IconDown from './svg/icon-down.svelte';
 
 export let value: number;
 export let name: string;
-export let label = "";
+export let label = '';
 export let maxValue = 16;
 export let minValue = 8;
 </script>

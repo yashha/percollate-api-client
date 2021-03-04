@@ -1,6 +1,6 @@
 <script lang="ts">
 export let yes = false;
-export let label = "";
+export let label = '';
 </script>
 
 <div class="mb-6 md:flex md:items-center">

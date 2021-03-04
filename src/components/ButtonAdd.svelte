@@ -1,5 +1,5 @@
 <script lang="ts">
-import IconPlus from "./svg/icon-plus.svelte";
+import IconPlus from './svg/icon-plus.svelte';
 </script>
 
 <button

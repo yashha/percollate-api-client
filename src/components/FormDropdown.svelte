@@ -1,9 +1,9 @@
 <script lang="ts">
-import IconDown from "./svg/icon-down.svelte";
+import IconDown from './svg/icon-down.svelte';
 
 export let value: string;
-export let label = "";
-export let name = "";
+export let label = '';
+export let name = '';
 </script>
 
 <div class="w-full px-3 mb-6 md:w-1/4 md:mb-0">

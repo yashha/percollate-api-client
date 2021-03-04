@@ -1,5 +1,5 @@
 <script lang="ts">
-import IconShare from "./svg/icon-share.svelte";
+import IconShare from './svg/icon-share.svelte';
 
 export let url: string;
 </script>
