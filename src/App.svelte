@@ -19,6 +19,8 @@ let showToc = false;
 let downloadUrl = '';
 let shareUrl = '';
 let mounted = false;
+const advanced: boolean = (new URLSearchParams(decodeURI(window.location.search)))
+  .get('advanced') === "";
 
 $: {
   urls = [...urls];
@@ -89,9 +91,9 @@ onMount(async () => {
 });
 </script>
 
-<div class="container w-full pt-5 mx-auto md:px-60 md:pt-20">
+<div class="container pt-20 mx-auto md:pt-20">
   <div
-    class="w-full px-4 text-xl leading-normal text-gray-800 md:px-6"
+    class="w-full px-4 mx-auto text-xl leading-normal text-gray-800 md:px-70"
     style="font-family: Georgia, serif;">
     <div class="font-sans">
       <h1
@@ -133,29 +135,32 @@ onMount(async () => {
           <option value="4">4</option>
         </FormDropdown>
         <FormNumber label="FONT SIZE" name="fontsize" bind:value="{fontSize}" />
-        <div class="w-full px-3 mt-6 mb-6 md:w-1/3 md:mb-0">
-          <details>
-            <summary>Custom CSS</summary>
-            <label
-              class="block mt-3 mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
-              for="customcss">
-              CUSTOM CSS
-            </label>
-            <div class="relative">
-              <textarea
-                bind:value="{customCss}"
-                class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
-                id="customcss"></textarea>
-            </div>
-          </details>
-        </div>
+        {#if advanced}
+          <div class="w-full px-3 mt-6 mb-6 md:w-1/3 md:mb-0">
+            <details>
+              <summary>Custom CSS</summary>
+              <label
+                class="block mt-3 mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+                for="customcss">
+                CUSTOM CSS
+              </label>
+              <div class="relative">
+                <textarea
+                  bind:value="{customCss}"
+                  class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="customcss"></textarea>
+              </div>
+            </details>
+          </div>
+        {/if}
       </div>
     </form>
-
-    {#if urls.length > 0 && urls[0] !== ''}
-      <ButtonDownload url="{downloadUrl}" />
-    {/if}
-    <ButtonShare url="{shareUrl}" />
+    <div class="flex justify-center mx-auto mt-6 space-x-4">
+      {#if urls.length > 0 && urls[0] !== ''}
+        <span><ButtonDownload url="{downloadUrl}"/></span>
+      {/if}
+      <span><ButtonShare url="{shareUrl}" /></span>
+    </div>
     <br />
   </div>
 </div>
