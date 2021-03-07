@@ -54,7 +54,7 @@ function createShareUrl() {
   shareUrl = '?' + buildUrl().searchParams.toString();
 }
 function buildUrl() {
-  const apiurl = 'https://api.readtheweb.de/load.pdf';
+  const apiurl = 'https://readtheweb.de/api/load.pdf';
   const myUrlWithParams = new URL(apiurl);
   myUrlWithParams.searchParams.append('pagesperside', pagesPerSide);
   urls.forEach((item) => {
