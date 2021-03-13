@@ -93,7 +93,7 @@ onMount(async () => {
 
 <div class="container pt-20 mx-auto md:pt-20">
   <div
-    class="w-full px-4 mx-auto text-xl leading-normal text-gray-800 md:px-70"
+    class="w-full px-4 mx-auto text-xl leading-normal text-gray-800 md:px-20 lg:px-70"
     style="font-family: Georgia, serif;">
     <div class="font-sans">
       <h1
