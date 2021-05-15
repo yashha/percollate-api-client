@@ -1,8 +1,12 @@
-const preprocess = require('svelte-preprocess');
+import preprocess from 'svelte-preprocess';
+import adapter from '@sveltejs/adapter-static';
 
-module.exports = {
+const config = {
   kit: {
-    adapter: '@sveltejs/adapter-static',
+    adapter: adapter(),
   },
   preprocess: preprocess({postcss: true}),
 };
+
+
+export default config;
