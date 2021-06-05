@@ -1,5 +1,6 @@
 <script lang="ts">
 import { onMount } from 'svelte';
+import Meta from 'svelte-meta';
 
 import ButtonAdd from './components/ButtonAdd.svelte';
 import ButtonDownload from './components/ButtonDownload.svelte';
@@ -90,6 +91,16 @@ onMount(async () => {
   loadQuery();
 });
 </script>
+
+<Meta
+  title="Read the web! - Make websites readable"
+  description="Make the web more readable and printable by generating clean pdf."
+  url="https://readtheweb.de/"
+  openGraph={{
+    type: 'website',
+    locale: 'en_US'
+  }}
+/>
 
 <div class="container pt-20 mx-auto md:pt-20">
   <div
