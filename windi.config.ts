@@ -1,6 +1,8 @@
-const colors = require('windicss/colors')
-const typography = require('windicss/plugin/typography')
-module.exports = {
+import colors from 'windicss/colors';
+import typography from 'windicss/plugin/typography';
+import { defineConfig } from 'windicss/helpers'
+
+export default defineConfig({
   darkMode: 'class',
   plugins: [typography],
   theme: {
@@ -13,4 +15,4 @@ module.exports = {
       }
     }
   }
-}
+})
