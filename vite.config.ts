@@ -1,8 +1,8 @@
-const svelte = require('@svitejs/vite-plugin-svelte')
-const { defineConfig } = require('vite')
-const vitePluginWindicss = require('vite-plugin-windicss').default
+import svelte from '@svitejs/vite-plugin-svelte'
+import { defineConfig } from 'vite'
+import vitePluginWindicss from 'vite-plugin-windicss'
 
-module.exports = defineConfig(({ command, mode }) => {
+export default defineConfig(({ command, mode }) => {
   const isProduction = mode === 'production'
   return {
     plugins: [
