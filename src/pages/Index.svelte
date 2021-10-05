@@ -103,13 +103,13 @@
   }}
 />
 
-<div class="container pt-20 mx-auto md:pt-20">
+<div class="container mx-auto pt-20 md:pt-20">
   <div
-    class="w-full px-4 mx-auto text-xl leading-normal text-gray-800 md:px-20 lg:px-70"
+    class="mx-auto text-xl leading-normal w-full px-4 text-gray-800 md:px-20 lg:px-70"
     style="font-family: Georgia, serif;">
     <div class="font-sans">
       <h1
-        class="pt-6 pb-2 font-sans text-3xl font-bold text-gray-900 break-normal md:text-4xl">
+        class="font-sans font-bold pt-6 pb-2 text-3xl text-gray-900 break-normal md:text-4xl">
         {$_('page_title')}
       </h1>
     </div>
@@ -132,7 +132,7 @@
         <FormCheckbox bind:yes="{showToc}" label="Show table of contents!" />
       {/if}
 
-      <div class="flex flex-wrap mb-2 -mx-3">
+      <div class="flex flex-wrap -mx-3 mb-2">
         <FormDropdown label="FORMAT" name="format" bind:value="{format}">
           <option value="a4">A4</option>
           <option value="a5" selected>A5</option>
@@ -147,18 +147,18 @@
         </FormDropdown>
         <FormNumber label="{$_('form_font_size')}" name="fontsize" bind:value="{fontSize}" />
         {#if advanced}
-          <div class="w-full px-3 mt-6 mb-6 md:w-1/3 md:mb-0">
+          <div class="mt-6 mb-6 w-full px-3 md:mb-0 md:w-1/3">
             <details>
               <summary>Custom CSS</summary>
               <label
-                class="block mt-3 mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
+                class="font-bold mt-3 text-xs mb-2 tracking-wide text-gray-700 block uppercase"
                 for="customcss">
                 CUSTOM CSS
               </label>
               <div class="relative">
                 <textarea
                   bind:value="{customCss}"
-                  class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                  class="border rounded bg-gray-200 border-gray-200 leading-tight w-full py-3 px-4 pr-8 text-gray-700 block appearance-none focus:bg-white focus:outline-none focus:border-gray-500"
                   id="customcss"></textarea>
               </div>
             </details>
@@ -166,7 +166,7 @@
         {/if}
       </div>
     </form>
-    <div class="flex justify-center mx-auto mt-6 space-x-4">
+    <div class="flex mx-auto space-x-4 mt-6 justify-center">
       {#if urls.length > 0 && urls[0] !== ''}
         <span><ButtonDownload url="{downloadUrl}" /></span>
       {/if}
