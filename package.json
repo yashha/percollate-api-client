@@ -9,7 +9,8 @@
     "dev": "vite",
     "build": "vite build && npm run brotli:dist",
     "serve": "vite preview",
-    "brotli:dist": "node br.js"
+    "brotli:dist": "node br.js",
+    "analysis": "windicss-analysis"
   },
   "dependencies": {
     "svelte-i18n": "^3.3.12",
@@ -29,6 +30,7 @@
     "svelte-preprocess": "^4.9.8",
     "typescript": "^4.4.3",
     "vite": "^2.6.2",
-    "vite-plugin-windicss": "^1.4.9"
+    "vite-plugin-windicss": "^1.4.9",
+    "windicss-analysis": "^0.3.4"
   }
 }
