@@ -5,7 +5,6 @@ import './i18n';
 import Index from './pages/Index.svelte';
 </script>
 
-{#if $isLoading}
-{:else}
-<Index></Index>
+{#if !$isLoading}
+    <Index></Index>
 {/if}
