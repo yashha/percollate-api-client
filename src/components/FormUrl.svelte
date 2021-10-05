@@ -6,6 +6,7 @@
 
 <script lang="ts">
 import IconClose from './svg/icon-close.svelte';
+import { _ } from 'svelte-i18n';
 
 export let url = '';
 export let index: number;
@@ -22,7 +23,7 @@ export let index: number;
     type="url"
     name="url"
     id="url-{index}"
-    placeholder="Enter url"
+    placeholder="{$_('form_url_placeholder')}"
     required
     bind:value="{url}" />
   {#if url}

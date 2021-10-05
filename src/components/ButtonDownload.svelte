@@ -1,5 +1,6 @@
 <script lang="ts">
 import IconDownload from './svg/icon-download.svelte';
+import { _ } from 'svelte-i18n';
 
 export let url: string;
 </script>
@@ -10,6 +11,6 @@ export let url: string;
     href="{url}"
     download>
     <IconDownload />
-    <span>Download</span>
+    <span>{$_('button_download_label')}</span>
   </a>
 </div>
