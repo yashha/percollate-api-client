@@ -14,21 +14,21 @@
   "dependencies": {
     "svelte-i18n": "^3.3.12",
     "svelte-meta": "^1.0.2",
-    "windicss": "^2.4.3"
+    "windicss": "^3.1.9"
   },
   "devDependencies": {
     "@svitejs/vite-plugin-svelte": "^0.11.1",
     "@tsconfig/svelte": "^2.0.1",
     "brotli": "^1.3.2",
-    "glob": "^7.1.7",
-    "prettier": "^2.3.1",
-    "prettier-plugin-svelte": "^2.3.0",
-    "svelte": "^3.35.0",
-    "svelte-check": "^1.2.5",
-    "svelte-hmr": "^0.12.9",
-    "svelte-preprocess": "^4.6.9",
-    "typescript": "^4.3.2",
-    "vite": "^2.0.5",
-    "vite-plugin-windicss": "^0.15.10"
+    "glob": "^7.2.0",
+    "prettier": "^2.4.1",
+    "prettier-plugin-svelte": "^2.4.0",
+    "svelte": "^3.43.1",
+    "svelte-check": "^2.2.6",
+    "svelte-hmr": "^0.14.7",
+    "svelte-preprocess": "^4.9.8",
+    "typescript": "^4.4.3",
+    "vite": "^2.6.2",
+    "vite-plugin-windicss": "^1.4.9"
   }
 }
