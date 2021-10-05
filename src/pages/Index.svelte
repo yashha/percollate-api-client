@@ -1,107 +1,106 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import Meta from 'svelte-meta';
-  import { _ } from 'svelte-i18n';
+import { onMount } from 'svelte';
+import Meta from 'svelte-meta';
+import { _ } from 'svelte-i18n';
 
-  import ButtonAdd from '../components/ButtonAdd.svelte';
-  import ButtonDownload from '../components/ButtonDownload.svelte';
-  import ButtonShare from '../components/ButtonShare.svelte';
-  import FormCheckbox from '../components/FormCheckbox.svelte';
-  import FormDropdown from '../components/FormDropdown.svelte';
-  import FormNumber from '../components/FormNumber.svelte';
-  import FormUrl from '../components/FormUrl.svelte';
+import ButtonAdd from '../components/ButtonAdd.svelte';
+import ButtonDownload from '../components/ButtonDownload.svelte';
+import ButtonShare from '../components/ButtonShare.svelte';
+import FormCheckbox from '../components/FormCheckbox.svelte';
+import FormDropdown from '../components/FormDropdown.svelte';
+import FormNumber from '../components/FormNumber.svelte';
+import FormUrl from '../components/FormUrl.svelte';
 
-  let urls = [''];
-  let format = 'a5';
-  let customCss = '';
-  let pagesPerSide = '1';
-  let fontSize = 12;
-  let showToc = false;
+let urls = [''];
+let format = 'a5';
+let customCss = '';
+let pagesPerSide = '1';
+let fontSize = 12;
+let showToc = false;
 
-  let downloadUrl = '';
-  let shareUrl = '';
-  let mounted = false;
-  const advanced: boolean =
-    new URLSearchParams(decodeURI(window.location.search)).get('advanced') === '';
+let downloadUrl = '';
+let shareUrl = '';
+let mounted = false;
+const advanced: boolean =
+  new URLSearchParams(decodeURI(window.location.search)).get('advanced') === '';
 
-  $: {
-    urls = [...urls];
-    format = format;
-    customCss = customCss;
-    pagesPerSide = pagesPerSide;
-    fontSize = fontSize;
-    showToc = showToc;
+$: {
+  urls = [...urls];
+  format = format;
+  customCss = customCss;
+  pagesPerSide = pagesPerSide;
+  fontSize = fontSize;
+  showToc = showToc;
 
-    const css = `
+  const css = `
               html { font-size: ${fontSize}pt }
               @page { size: ${format} portrait }
               ${customCss}
             `;
-    const url = buildUrl();
-    url.searchParams.append('css', css);
-    downloadUrl = url.href;
-    createShareUrl();
-  }
+  const url = buildUrl();
+  url.searchParams.append('css', css);
+  downloadUrl = url.href;
+  createShareUrl();
+}
 
-  function onSubmit(e: Event) {
-    e.preventDefault();
+function onSubmit(e: Event) {
+  e.preventDefault();
+}
+function addUrlInput() {
+  urls = [...urls, ''];
+}
+function createShareUrl() {
+  if (!mounted) {
+    return;
   }
-  function addUrlInput() {
-    urls = [...urls, ''];
-  }
-  function createShareUrl() {
-    if (!mounted) {
-      return;
-    }
-    shareUrl = '?' + buildUrl().searchParams.toString();
-  }
-  function buildUrl() {
-    const apiurl = 'https://readtheweb.de/api/load.pdf';
-    const myUrlWithParams = new URL(apiurl);
-    myUrlWithParams.searchParams.append('pagesperside', pagesPerSide);
-    urls.forEach((item) => {
-      myUrlWithParams.searchParams.append('url', item);
-    });
-    if (showToc) {
-      myUrlWithParams.searchParams.append('toc', 'true');
-    }
-    myUrlWithParams.searchParams.append('fontsize', fontSize.toString());
-    myUrlWithParams.searchParams.append('format', format);
-    myUrlWithParams.searchParams.append('customcss', customCss);
-    return myUrlWithParams;
-  }
-  function loadQuery() {
-    const urlParams = new URLSearchParams(decodeURI(window.location.search));
-    if (urlParams.get('url')) {
-      urls = urlParams.getAll('url');
-    }
-    format = urlParams.get('format') ? urlParams.get('format') : format;
-    fontSize = urlParams.get('fontsize')
-      ? parseInt(urlParams.get('fontsize'))
-      : fontSize;
-    pagesPerSide = urlParams.get('pagesperside')
-      ? urlParams.get('pagesperside')
-      : pagesPerSide;
-    showToc = urlParams.get('toc') ? urlParams.get('toc') === 'true' : showToc;
-    customCss = urlParams.get('customcss')
-      ? urlParams.get('customcss')
-      : customCss;
-  }
-  onMount(async () => {
-    mounted = true;
-    loadQuery();
+  shareUrl = '?' + buildUrl().searchParams.toString();
+}
+function buildUrl() {
+  const apiurl = 'https://readtheweb.de/api/load.pdf';
+  const myUrlWithParams = new URL(apiurl);
+  myUrlWithParams.searchParams.append('pagesperside', pagesPerSide);
+  urls.forEach((item) => {
+    myUrlWithParams.searchParams.append('url', item);
   });
+  if (showToc) {
+    myUrlWithParams.searchParams.append('toc', 'true');
+  }
+  myUrlWithParams.searchParams.append('fontsize', fontSize.toString());
+  myUrlWithParams.searchParams.append('format', format);
+  myUrlWithParams.searchParams.append('customcss', customCss);
+  return myUrlWithParams;
+}
+function loadQuery() {
+  const urlParams = new URLSearchParams(decodeURI(window.location.search));
+  if (urlParams.get('url')) {
+    urls = urlParams.getAll('url');
+  }
+  format = urlParams.get('format') ? urlParams.get('format') : format;
+  fontSize = urlParams.get('fontsize')
+    ? parseInt(urlParams.get('fontsize'))
+    : fontSize;
+  pagesPerSide = urlParams.get('pagesperside')
+    ? urlParams.get('pagesperside')
+    : pagesPerSide;
+  showToc = urlParams.get('toc') ? urlParams.get('toc') === 'true' : showToc;
+  customCss = urlParams.get('customcss')
+    ? urlParams.get('customcss')
+    : customCss;
+}
+onMount(async () => {
+  mounted = true;
+  loadQuery();
+});
 </script>
 
 <Meta
   title="Read the web! - Make websites readable"
   description="Make the web more readable and printable by generating clean pdf."
   url="https://readtheweb.de/"
-  openGraph={{
+  openGraph="{{
     type: 'website',
-    locale: 'en_US'
-  }}
-/>
+    locale: 'en_US',
+  }}" />
 
 <div class="container mx-auto pt-20 md:pt-20">
   <div
@@ -145,7 +144,10 @@
           <option value="2">2</option>
           <option value="4">4</option>
         </FormDropdown>
-        <FormNumber label="{$_('form_font_size')}" name="fontsize" bind:value="{fontSize}" />
+        <FormNumber
+          label="{$_('form_font_size')}"
+          name="fontsize"
+          bind:value="{fontSize}" />
         {#if advanced}
           <div class="mt-6 mb-6 w-full px-3 md:mb-0 md:w-1/3">
             <details>
