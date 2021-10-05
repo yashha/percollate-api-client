@@ -13,6 +13,7 @@
     "analysis": "windicss-analysis"
   },
   "dependencies": {
+    "modern-normalize": "^1.1.0",
     "svelte-i18n": "^3.3.12",
     "svelte-meta": "^1.0.2",
     "windicss": "^3.1.9"
