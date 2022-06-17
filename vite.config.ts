@@ -1,4 +1,4 @@
-import svelte from '@svitejs/vite-plugin-svelte'
+import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { defineConfig } from 'vite'
 import vitePluginWindicss from 'vite-plugin-windicss'
 
