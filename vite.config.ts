@@ -35,8 +35,8 @@ export default defineConfig(({ command, mode }) => {
               purpose: 'any',
             },
             {
-              src: 'pwa-maskable-192x192.png',
-              sizes: '192x192',
+              src: 'pwa-maskable-128x128.png',
+              sizes: '128x128',
               type: 'image/png',
               purpose: 'maskable',
             },
