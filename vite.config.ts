@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import vitePluginWindicss from 'vite-plugin-windicss'
 import { VitePWA } from 'vite-plugin-pwa'
 
-export default defineConfig(({ command, mode }) => {
+export default defineConfig(({ mode }) => {
   const isProduction = mode === 'production'
   return {
     plugins: [
