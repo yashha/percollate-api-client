@@ -6,6 +6,7 @@
   stroke-width="2"
   stroke-linecap="round"
   stroke-linejoin="round"
-  class="mt-2 w-4 h-4">
+  class="mt-2 h-4 w-4"
+>
   <path d="M18 15l-6-6-6 6"></path>
 </svg>

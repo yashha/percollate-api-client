@@ -2,4 +2,4 @@
 
 > Web client for percollate api
 
-### 🏠 [Homepage](https://percollate-api-client.now.sh/)
+### 🏠 [Homepage](https://readtheweb.de/)

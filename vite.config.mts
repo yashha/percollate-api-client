@@ -1,6 +1,5 @@
+import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
-import { defineConfig } from 'vite'
-import vitePluginWindicss from 'vite-plugin-windicss'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig(({ mode }) => {
@@ -11,9 +10,6 @@ export default defineConfig(({ mode }) => {
       svelte({
         hot: !isProduction,
         emitCss: true
-      }),
-      vitePluginWindicss({
-        transformCSS: 'pre'
       }),
       VitePWA({
         manifest: {
