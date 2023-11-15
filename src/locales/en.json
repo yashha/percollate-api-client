@@ -1,10 +1,10 @@
 {
-    "page_title": "Website to PDF Converter",
-    "page_introduction": "Make the web pages more readable and printable by generating clean pdf.",
-    "form_url_placeholder": "Enter URL here",
-    "form_font_size": "FONT SIZE",
-    "form_pages_per_side": "PAGES PER SIDE",
-    "button_share_label": "Share",
-    "button_add_title": "Append additional page",
-    "button_download_label": "Download"
+  "page_title": "Website to PDF Converter",
+  "page_introduction": "Make the web pages more readable and printable by generating clean pdf.",
+  "form_url_placeholder": "Enter URL here",
+  "form_font_size": "FONT SIZE",
+  "form_pages_per_side": "PAGES PER SIDE",
+  "button_share_label": "Share",
+  "button_add_title": "Append additional page",
+  "button_download_label": "Download"
 }

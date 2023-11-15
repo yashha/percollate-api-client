@@ -1,9 +1,15 @@
-<script lang="ts">
-  import IconClose from './svg/icon-close.svelte';
-  import { _ } from 'svelte-i18n';
+<style>
+.paclient__search::-webkit-search-cancel-button {
+  display: none;
+}
+</style>
 
-  export let url = '';
-  export let index: number;
+<script lang="ts">
+import IconClose from './svg/icon-close.svelte';
+import { _ } from 'svelte-i18n';
+
+export let url = '';
+export let index: number;
 </script>
 
 <label
@@ -18,23 +24,17 @@
     type="url"
     name="url"
     id="url-{index}"
-    placeholder={$_('form_url_placeholder')}
+    placeholder="{$_('form_url_placeholder')}"
     required
-    bind:value={url}
+    bind:value="{url}"
   />
   {#if url}
     <button
       style="width: 24px"
       class="absolute right-0 top-0 mr-3 mt-3 cursor-pointer"
-      on:click={() => (url = '')}
+      on:click="{() => (url = '')}"
     >
       <IconClose />
     </button>
   {/if}
 </div>
-
-<style>
-  .paclient__search::-webkit-search-cancel-button {
-    display: none;
-  }
-</style>

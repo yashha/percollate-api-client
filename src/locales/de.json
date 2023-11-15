@@ -1,10 +1,10 @@
 {
-    "page_title": "Webseite zu PDF Umwandler",
-    "page_introduction": "Mach das Netz leichter lesbar indem du aus einer beliebigen Webseite eine lesbares PDF erstellst.",
-    "form_url_placeholder": "URL hier eingeben",
-    "form_font_size": "SCHRIFTGRÖßE",
-    "form_pages_per_side": "SEITEN PER SEITE",
-    "button_share_label": "Teilen",
-    "button_add_title": "Zusätzliche Seite hinzufügen",
-    "button_download_label": "Herunterladen"
+  "page_title": "Webseite zu PDF Umwandler",
+  "page_introduction": "Mach das Netz leichter lesbar indem du aus einer beliebigen Webseite eine lesbares PDF erstellst.",
+  "form_url_placeholder": "URL hier eingeben",
+  "form_font_size": "SCHRIFTGRÖßE",
+  "form_pages_per_side": "SEITEN PER SEITE",
+  "button_share_label": "Teilen",
+  "button_add_title": "Zusätzliche Seite hinzufügen",
+  "button_download_label": "Herunterladen"
 }
