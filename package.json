@@ -1,6 +1,7 @@
 {
-  "name": "svite-windicss",
+  "name": "readtheweb.de",
   "version": "1.0.0",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "validate": "svelte-check",
