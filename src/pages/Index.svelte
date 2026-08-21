@@ -57,7 +57,7 @@ function createShareUrl() {
   shareUrl = '?' + buildUrl().searchParams.toString();
 }
 function buildUrl() {
-  const apiurl = 'https://api.readtheweb.de/load.pdf';
+  const apiurl = 'https://percollate-api-production.up.railway.app/load.pdf';
   const myUrlWithParams = new URL(apiurl);
   myUrlWithParams.searchParams.append('pagesperside', pagesPerSide);
   urls.forEach((item) => {
